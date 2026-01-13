@@ -19,7 +19,7 @@ public class ExptlCrystalFace extends DelegatingCategory.DelegatingCifCoreCatego
     /**
      * Diffractometer angle setting when the perpendicular to the specified
      * crystal face is aligned along a specified direction (e.g. the
-     * bisector of the incident and reflected beams in an optical goniometer.
+     * bisector of the incident and reflected beams in an optical goniometer).
      * @return FloatColumn
      */
     public FloatColumn getDiffrChi() {
@@ -37,7 +37,7 @@ public class ExptlCrystalFace extends DelegatingCategory.DelegatingCifCoreCatego
     /**
      * Diffractometer angle setting when the perpendicular to the specified
      * crystal face is aligned along a specified direction (e.g. the
-     * bisector of the incident and reflected beams in an optical goniometer.
+     * bisector of the incident and reflected beams in an optical goniometer).
      * @return FloatColumn
      */
     public FloatColumn getDiffrKappa() {
@@ -55,7 +55,7 @@ public class ExptlCrystalFace extends DelegatingCategory.DelegatingCifCoreCatego
     /**
      * Diffractometer angle setting when the perpendicular to the specified
      * crystal face is aligned along a specified direction (e.g. the
-     * bisector of the incident and reflected beams in an optical goniometer.
+     * bisector of the incident and reflected beams in an optical goniometer).
      * @return FloatColumn
      */
     public FloatColumn getDiffrPhi() {
@@ -73,7 +73,7 @@ public class ExptlCrystalFace extends DelegatingCategory.DelegatingCifCoreCatego
     /**
      * Diffractometer angle setting when the perpendicular to the specified
      * crystal face is aligned along a specified direction (e.g. the
-     * bisector of the incident and reflected beams in an optical goniometer.
+     * bisector of the incident and reflected beams in an optical goniometer).
      * @return FloatColumn
      */
     public FloatColumn getDiffrPsi() {

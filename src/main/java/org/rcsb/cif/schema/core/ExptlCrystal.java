@@ -115,7 +115,7 @@ public class ExptlCrystal extends DelegatingCategory.DelegatingCifCoreCategory {
 
     /**
      * Description of the quality and habit of the crystal. The crystal
-     * dimensions should be provided using the exptl_crystal.size_* data items.
+     * dimensions should be provided using the _exptl_crystal.size_* data items.
      * @return StrColumn
      */
     public StrColumn getDescription() {
@@ -150,6 +150,65 @@ public class ExptlCrystal extends DelegatingCategory.DelegatingCifCoreCategory {
      */
     public StrColumn getId() {
         return new DelegatingStrColumn(parentBlock.getColumn("exptl_crystal_id"));
+    }
+
+    /**
+     * Isotropic and resolution-independent term representing the average size of
+     * mosaic domains in the crystal specified in angstroms. Larger size indicates
+     * better ordered crystals.
+     * @return FloatColumn
+     */
+    public FloatColumn getMosaicBlockSize() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("exptl_crystal_mosaic_block_size"));
+    }
+
+    /**
+     * Standard uncertainty of _exptl_crystal.mosaic_block_size.
+     * @return FloatColumn
+     */
+    public FloatColumn getMosaicBlockSizeSu() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("exptl_crystal_mosaic_block_size_su"));
+    }
+
+    /**
+     * How parameters derived from the spot shape (such as mosaic block
+     * size and rotation, beam divergence, and crossfire) and their
+     * errors were estimated.
+     * 
+     * This can be a written description or a citation to a specific
+     * software package that determined these parameters.
+     * @return StrColumn
+     */
+    public StrColumn getMosaicMethod() {
+        return new DelegatingStrColumn(parentBlock.getColumn("exptl_crystal_mosaic_method"));
+    }
+
+    /**
+     * Isotropic approximation of the distribution of mis-orientation angles
+     * specified in degrees of all the mosaic domain blocks in the crystal,
+     * represented as a standard deviation. Here, a mosaic block is a set of
+     * contiguous unit cells assumed to be perfectly aligned. Lower mosaicity
+     * indicates better ordered crystals. See for example:
+     * 
+     * Nave, C. (1998). Acta Cryst. D54, 848-853.
+     * 
+     * Note that many software packages estimate the mosaic rotation distribution
+     * differently and may combine several physical properties of the experiment
+     * into a single mosaic term. This term will help fit the modelled spots
+     * to the observed spots without necessarily being directly related to the
+     * physics of the crystal itself.
+     * @return FloatColumn
+     */
+    public FloatColumn getMosaicity() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("exptl_crystal_mosaicity"));
+    }
+
+    /**
+     * Standard uncertainty of _exptl_crystal.mosaicity.
+     * @return FloatColumn
+     */
+    public FloatColumn getMosaicitySu() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("exptl_crystal_mosaicity_su"));
     }
 
     /**

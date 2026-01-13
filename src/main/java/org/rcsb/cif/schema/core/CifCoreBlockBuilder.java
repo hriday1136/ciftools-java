@@ -416,10 +416,6 @@ public class CifCoreBlockBuilder extends BlockBuilderImpl<CifCoreFileBuilder> {
         return new CifCoreCategoryBuilder.FunctionBuilder(this);
     }
 
-    public CifCoreCategoryBuilder.CellAngleBuilder enterCellAngle() {
-        return new CifCoreCategoryBuilder.CellAngleBuilder(this);
-    }
-
     public CifCoreCategoryBuilder.ChemCompBondBuilder enterChemCompBond() {
         return new CifCoreCategoryBuilder.ChemCompBondBuilder(this);
     }

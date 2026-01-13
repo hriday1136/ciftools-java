@@ -61,7 +61,7 @@ public class CellMeasurement extends DelegatingCategory.DelegatingCifCoreCategor
 
     /**
      * Total number of reflections used to determine the unit cell.
-     * The reflections may be specified as cell_measurement_refln items.
+     * The reflections may be specified as CELL_MEASUREMENT_REFLN items.
      * @return IntColumn
      */
     public IntColumn getReflnsUsed() {

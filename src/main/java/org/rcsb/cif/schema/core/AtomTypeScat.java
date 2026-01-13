@@ -18,9 +18,9 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
 
     /**
      * The set of Cromer-Mann coefficients for generating X-ray scattering
-     * factors. [ c, a1, b1, a2, b2, a3, b3, a4, b4 ]
-     * Ref: International Tables for Crystallography, Vol. C
-     * (1991) Table 6.1.1.4
+     * factors:
+     * [ c, a1, b1, a2, b2, a3, b3, a4, b4 ].
+     * Ref: International Tables for Crystallography (2004). Vol. C, Table 6.1.1.4.
      * @return FloatColumn
      */
     public FloatColumn getCromerMannCoeffs() {
@@ -76,9 +76,9 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
      * The set of polynomial coefficients for generating X-ray scattering factors:
      * [ a_0, a_1, ... , a_N ].
      * 
-     * f(s; Z) = exp(Sum(a~i~ * s^i^), i=0:N)
+     * f(s; Z) = exp[Sum(a~i~ * s^i^), i=0:N]
      * 
-     * where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+     * where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
      * of the incident radiation in angstroms.
      * @return FloatColumn
      */
@@ -120,9 +120,9 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
      * The set of Gaussian coefficients for generating X-ray scattering factors:
      * [ c, a_1, b_1, a_2, b_2, ... , a_N, b_N ].
      * 
-     * f(s; Z) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:N)
+     * f(s; Z) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:N]
      * 
-     * where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+     * where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
      * of the incident radiation in angstroms.
      * @return FloatColumn
      */
@@ -162,15 +162,15 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
 
     /**
      * The set of data items used to define Fox et al. coefficients
-     * for generation of high angle (2.0 &lt; s &lt; 6.0 Å^-1^) X-ray scattering factors.
+     * for generation of high-angle (2.0 &lt; s &lt; 6.0 Å^-1^) X-ray scattering factors.
      * 
-     * f(s) = exp(Sum(c~i~ * s^i^, i=0:3))
+     * f(s) = exp[Sum(c~i~ * s^i^, i=0:3)]
      * 
-     * where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+     * where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
      * of the incident radiation in angstroms.
      * 
-     * Ref: International Tables for Crystallography, Vol. C
-     * (1991) Table 6.1.1.5
+     * Ref: International Tables for Crystallography (2004). Vol. C,
+     * Table 6.1.1.5.
      * @return FloatColumn
      */
     public FloatColumn getHiAngFoxC0() {
@@ -179,15 +179,15 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
 
     /**
      * The set of data items used to define Fox et al. coefficients
-     * for generation of high angle (2.0 &lt; s &lt; 6.0 Å^-1^) X-ray scattering factors.
+     * for generation of high-angle (2.0 &lt; s &lt; 6.0 Å^-1^) X-ray scattering factors.
      * 
-     * f(s) = exp(Sum(c~i~ * s^i^, i=0:3))
+     * f(s) = exp[Sum(c~i~ * s^i^, i=0:3)]
      * 
-     * where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+     * where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
      * of the incident radiation in angstroms.
      * 
-     * Ref: International Tables for Crystallography, Vol. C
-     * (1991) Table 6.1.1.5
+     * Ref: International Tables for Crystallography (2004). Vol. C,
+     * Table 6.1.1.5.
      * @return FloatColumn
      */
     public FloatColumn getHiAngFoxC1() {
@@ -196,15 +196,15 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
 
     /**
      * The set of data items used to define Fox et al. coefficients
-     * for generation of high angle (2.0 &lt; s &lt; 6.0 Å^-1^) X-ray scattering factors.
+     * for generation of high-angle (2.0 &lt; s &lt; 6.0 Å^-1^) X-ray scattering factors.
      * 
-     * f(s) = exp(Sum(c~i~ * s^i^, i=0:3))
+     * f(s) = exp[Sum(c~i~ * s^i^, i=0:3)]
      * 
-     * where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+     * where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
      * of the incident radiation in angstroms.
      * 
-     * Ref: International Tables for Crystallography, Vol. C
-     * (1991) Table 6.1.1.5
+     * Ref: International Tables for Crystallography (2004). Vol. C,
+     * Table 6.1.1.5.
      * @return FloatColumn
      */
     public FloatColumn getHiAngFoxC2() {
@@ -213,15 +213,15 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
 
     /**
      * The set of data items used to define Fox et al. coefficients
-     * for generation of high angle (2.0 &lt; s &lt; 6.0 Å^-1^) X-ray scattering factors.
+     * for generation of high-angle (2.0 &lt; s &lt; 6.0 Å^-1^) X-ray scattering factors.
      * 
-     * f(s) = exp(Sum(c~i~ * s^i^, i=0:3))
+     * f(s) = exp[Sum(c~i~ * s^i^, i=0:3)]
      * 
-     * where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+     * where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
      * of the incident radiation in angstroms.
      * 
-     * Ref: International Tables for Crystallography, Vol. C
-     * (1991) Table 6.1.1.5
+     * Ref: International Tables for Crystallography (2004). Vol. C,
+     * Table 6.1.1.5.
      * @return FloatColumn
      */
     public FloatColumn getHiAngFoxC3() {
@@ -229,10 +229,11 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * The set of Fox et al. coefficients for generating high angle
-     * X-ray scattering factors. [ c0, c1, c2, c3 ]
-     * Ref: International Tables for Crystallography, Vol. C
-     * (1991) Table 6.1.1.5
+     * The set of Fox et al. coefficients for generating high-angle
+     * X-ray scattering factors: [ c0, c1, c2, c3 ]
+     * 
+     * Ref: International Tables for Crystallography (2004). Vol. C,
+     * Table 6.1.1.5
      * @return FloatColumn
      */
     public FloatColumn getHiAngFoxCoeffs() {
@@ -245,11 +246,16 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
      * [ e, c_1, d_1, c_2, d_2, ... , c_N, d_N ].
      * 
      * f(s; Z) =
-     * Z - 8π * a~0~ * s^2^ * (e + Sum( c~i~ * exp(-d~i~ * s^2^), i=1:N))
+     * Z - 8π * a~0~ * s^2^ * {e + Sum[ c~i~ * exp(-d~i~ * s^2^), i=1:N]}
      * 
      * where s = sin(θ)/λ, a~0~ is the Bohr radius, and Z is the atomic number.
      * θ is the diffraction angle and λ is the wavelength of the incident
      * radiation in angstroms.
+     * 
+     * Ref: Thorkildsen, G. (2023). Acta Cryst. A79, 318–330.
+     * Mott, N. F. &amp; Bragg, W. L. (1930). Proc. R. Soc. Lond. Ser. A,
+     * 127, 658–665.
+     * Bethe, H. (1930). Ann. Phys. 397, 325–400.
      * @return FloatColumn
      */
     public FloatColumn getInvMottBetheCoefs() {
@@ -299,15 +305,15 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
      * The set of data items used to define Cromer-Mann coefficients
      * for generation of (0.0 &lt; s &lt; 2.0 Å^-1^) X-ray scattering factors.
      * 
-     * f(s) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:4)
+     * f(s) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:4]
      * 
-     * where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+     * where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
      * of the incident radiation in angstroms.
      * 
-     * Ref: International Tables for X-ray Crystallography, Vol. IV
-     * (1974) Table 2.2B
-     * or   International Tables for Crystallography, Vol. C
-     * (1991) Tables 6.1.1.4 and 6.1.1.5
+     * Ref: International Tables for X-ray Crystallography (1974).
+     * Vol. IV, Table 2.2B
+     * or   International Tables for Crystallography (2004).
+     * Vol. C, Tables 6.1.1.4 and 6.1.1.5.
      * @return FloatColumn
      */
     public FloatColumn getCromerMannA1() {
@@ -318,15 +324,15 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
      * The set of data items used to define Cromer-Mann coefficients
      * for generation of (0.0 &lt; s &lt; 2.0 Å^-1^) X-ray scattering factors.
      * 
-     * f(s) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:4)
+     * f(s) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:4]
      * 
-     * where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+     * where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
      * of the incident radiation in angstroms.
      * 
-     * Ref: International Tables for X-ray Crystallography, Vol. IV
-     * (1974) Table 2.2B
-     * or   International Tables for Crystallography, Vol. C
-     * (1991) Tables 6.1.1.4 and 6.1.1.5
+     * Ref: International Tables for X-ray Crystallography (1974).
+     * Vol. IV, Table 2.2B
+     * or   International Tables for Crystallography (2004).
+     * Vol. C, Tables 6.1.1.4 and 6.1.1.5.
      * @return FloatColumn
      */
     public FloatColumn getCromerMannA2() {
@@ -337,15 +343,15 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
      * The set of data items used to define Cromer-Mann coefficients
      * for generation of (0.0 &lt; s &lt; 2.0 Å^-1^) X-ray scattering factors.
      * 
-     * f(s) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:4)
+     * f(s) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:4]
      * 
-     * where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+     * where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
      * of the incident radiation in angstroms.
      * 
-     * Ref: International Tables for X-ray Crystallography, Vol. IV
-     * (1974) Table 2.2B
-     * or   International Tables for Crystallography, Vol. C
-     * (1991) Tables 6.1.1.4 and 6.1.1.5
+     * Ref: International Tables for X-ray Crystallography (1974).
+     * Vol. IV, Table 2.2B
+     * or   International Tables for Crystallography (2004).
+     * Vol. C, Tables 6.1.1.4 and 6.1.1.5.
      * @return FloatColumn
      */
     public FloatColumn getCromerMannA3() {
@@ -356,15 +362,15 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
      * The set of data items used to define Cromer-Mann coefficients
      * for generation of (0.0 &lt; s &lt; 2.0 Å^-1^) X-ray scattering factors.
      * 
-     * f(s) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:4)
+     * f(s) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:4]
      * 
-     * where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+     * where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
      * of the incident radiation in angstroms.
      * 
-     * Ref: International Tables for X-ray Crystallography, Vol. IV
-     * (1974) Table 2.2B
-     * or   International Tables for Crystallography, Vol. C
-     * (1991) Tables 6.1.1.4 and 6.1.1.5
+     * Ref: International Tables for X-ray Crystallography (1974).
+     * Vol. IV, Table 2.2B
+     * or   International Tables for Crystallography (2004).
+     * Vol. C, Tables 6.1.1.4 and 6.1.1.5.
      * @return FloatColumn
      */
     public FloatColumn getCromerMannA4() {
@@ -375,15 +381,15 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
      * The set of data items used to define Cromer-Mann coefficients
      * for generation of (0.0 &lt; s &lt; 2.0 Å^-1^) X-ray scattering factors.
      * 
-     * f(s) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:4)
+     * f(s) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:4]
      * 
-     * where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+     * where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
      * of the incident radiation in angstroms.
      * 
-     * Ref: International Tables for X-ray Crystallography, Vol. IV
-     * (1974) Table 2.2B
-     * or   International Tables for Crystallography, Vol. C
-     * (1991) Tables 6.1.1.4 and 6.1.1.5
+     * Ref: International Tables for X-ray Crystallography (1974).
+     * Vol. IV, Table 2.2B
+     * or   International Tables for Crystallography (2004).
+     * Vol. C, Tables 6.1.1.4 and 6.1.1.5.
      * @return FloatColumn
      */
     public FloatColumn getCromerMannB1() {
@@ -394,15 +400,15 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
      * The set of data items used to define Cromer-Mann coefficients
      * for generation of (0.0 &lt; s &lt; 2.0 Å^-1^) X-ray scattering factors.
      * 
-     * f(s) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:4)
+     * f(s) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:4]
      * 
-     * where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+     * where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
      * of the incident radiation in angstroms.
      * 
-     * Ref: International Tables for X-ray Crystallography, Vol. IV
-     * (1974) Table 2.2B
-     * or   International Tables for Crystallography, Vol. C
-     * (1991) Tables 6.1.1.4 and 6.1.1.5
+     * Ref: International Tables for X-ray Crystallography (1974).
+     * Vol. IV, Table 2.2B
+     * or   International Tables for Crystallography (2004).
+     * Vol. C, Tables 6.1.1.4 and 6.1.1.5.
      * @return FloatColumn
      */
     public FloatColumn getCromerMannB2() {
@@ -413,15 +419,15 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
      * The set of data items used to define Cromer-Mann coefficients
      * for generation of (0.0 &lt; s &lt; 2.0 Å^-1^) X-ray scattering factors.
      * 
-     * f(s) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:4)
+     * f(s) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:4]
      * 
-     * where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+     * where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
      * of the incident radiation in angstroms.
      * 
-     * Ref: International Tables for X-ray Crystallography, Vol. IV
-     * (1974) Table 2.2B
-     * or   International Tables for Crystallography, Vol. C
-     * (1991) Tables 6.1.1.4 and 6.1.1.5
+     * Ref: International Tables for X-ray Crystallography (1974).
+     * Vol. IV, Table 2.2B
+     * or   International Tables for Crystallography (2004).
+     * Vol. C, Tables 6.1.1.4 and 6.1.1.5.
      * @return FloatColumn
      */
     public FloatColumn getCromerMannB3() {
@@ -432,15 +438,15 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
      * The set of data items used to define Cromer-Mann coefficients
      * for generation of (0.0 &lt; s &lt; 2.0 Å^-1^) X-ray scattering factors.
      * 
-     * f(s) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:4)
+     * f(s) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:4]
      * 
-     * where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+     * where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
      * of the incident radiation in angstroms.
      * 
-     * Ref: International Tables for X-ray Crystallography, Vol. IV
-     * (1974) Table 2.2B
-     * or   International Tables for Crystallography, Vol. C
-     * (1991) Tables 6.1.1.4 and 6.1.1.5
+     * Ref: International Tables for X-ray Crystallography (1974).
+     * Vol. IV, Table 2.2B
+     * or   International Tables for Crystallography (2004).
+     * Vol. C, Tables 6.1.1.4 and 6.1.1.5.
      * @return FloatColumn
      */
     public FloatColumn getCromerMannB4() {
@@ -451,15 +457,15 @@ public class AtomTypeScat extends DelegatingCategory.DelegatingCifCoreCategory {
      * The set of data items used to define Cromer-Mann coefficients
      * for generation of (0.0 &lt; s &lt; 2.0 Å^-1^) X-ray scattering factors.
      * 
-     * f(s) = c + Sum(a~i~ * exp(-b~i~ * s^2^), i=1:4)
+     * f(s) = c + Sum[a~i~ * exp(-b~i~ * s^2^), i=1:4]
      * 
-     * where s = sin(θ)/λ and θ is the diffraction angle and λ is the wavelength
+     * where s = sin(θ)/λ, θ is the diffraction angle and λ is the wavelength
      * of the incident radiation in angstroms.
      * 
-     * Ref: International Tables for X-ray Crystallography, Vol. IV
-     * (1974) Table 2.2B
-     * or   International Tables for Crystallography, Vol. C
-     * (1991) Tables 6.1.1.4 and 6.1.1.5
+     * Ref: International Tables for X-ray Crystallography (1974).
+     * Vol. IV, Table 2.2B
+     * or   International Tables for Crystallography (2004).
+     * Vol. C, Tables 6.1.1.4 and 6.1.1.5.
      * @return FloatColumn
      */
     public FloatColumn getCromerMannC() {

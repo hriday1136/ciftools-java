@@ -17,13 +17,13 @@ public class Chemical extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * Necessary conditions for this assignment are given by
-     * Flack, H. D. &amp; Bernardinelli, G. (1999). Acta Cryst. A55, 908-915.
+     * Necessary conditions for this assignment are given by H. D. Flack
+     * and G. Bernardinelli (1999, 2000).
+     * 
+     * Ref: Flack, H. D. &amp; Bernardinelli, G. (1999). Acta Cryst. A55, 908-915.
      * https://doi.org/10.1107/S0108767399004262
-     * https://www.iucr.org/paper?sh0129
      * Flack, H. D. &amp; Bernardinelli, G. (2000). J. Appl. Cryst. 33, 1143-1148.
      * https://doi.org/10.1107/S0021889800007184
-     * https://www.iucr.org/paper?ks0021
      * @return StrColumn
      */
     public StrColumn getAbsoluteConfiguration() {
@@ -48,8 +48,9 @@ public class Chemical extends DelegatingCategory.DelegatingCifCoreCategory {
      * Enantioexcess is defined in the IUPAC Recommendations
      * (Moss et al., 1996). The composition of the crystal
      * and bulk must be the same.
+     * 
      * Ref: Moss G. P. et al. (1996). Basic Terminology of Stereochemistry.
-     * Pure Appl. Chem., 68, 2193-2222.
+     * Pure Appl. Chem. 68, 2193-2222.
      * https://doi.org/10.1351/pac199668122193
      * https://iupac.qmul.ac.uk/stereo/
      * @return FloatColumn

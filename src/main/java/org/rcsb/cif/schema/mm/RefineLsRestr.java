@@ -35,6 +35,8 @@ public class RefineLsRestr extends DelegatingCategory {
                 return getType();
             case "weight":
                 return getWeight();
+            case "pdbx_Zscore":
+                return getPdbxZscore();
             case "pdbx_restraint_function":
                 return getPdbxRestraintFunction();
             default:
@@ -125,6 +127,15 @@ public class RefineLsRestr extends DelegatingCategory {
      */
     public FloatColumn getWeight() {
         return delegate.getColumn("weight", DelegatingFloatColumn::new);
+    }
+
+    /**
+     * For the given parameter type, the target Z-score deviation from
+     * the ideal values used as restraints.
+     * @return FloatColumn
+     */
+    public FloatColumn getPdbxZscore() {
+        return delegate.getColumn("pdbx_Zscore", DelegatingFloatColumn::new);
     }
 
     /**

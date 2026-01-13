@@ -7639,6 +7639,10 @@ public class MmCifCategoryBuilder extends CategoryBuilderImpl<MmCifBlockBuilder,
             return new FloatColumnBuilderImpl<>(CATEGORY_NAME, "weight", this);
         }
 
+        public FloatColumnBuilder<RefineLsRestrBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterPdbxZscore() {
+            return new FloatColumnBuilderImpl<>(CATEGORY_NAME, "pdbx_Zscore", this);
+        }
+
         public StrColumnBuilder<RefineLsRestrBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterPdbxRestraintFunction() {
             return new StrColumnBuilderImpl<>(CATEGORY_NAME, "pdbx_restraint_function", this);
         }
@@ -8919,6 +8923,10 @@ public class MmCifCategoryBuilder extends CategoryBuilderImpl<MmCifBlockBuilder,
 
         public StrColumnBuilder<SoftwareBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterVersion() {
             return new StrColumnBuilderImpl<>(CATEGORY_NAME, "version", this);
+        }
+
+        public StrColumnBuilder<SoftwareBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterPdbxReferenceDOI() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "pdbx_reference_DOI", this);
         }
 
         public IntColumnBuilder<SoftwareBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterPdbxOrdinal() {
@@ -21093,6 +21101,10 @@ public class MmCifCategoryBuilder extends CategoryBuilderImpl<MmCifBlockBuilder,
             return new StrColumnBuilderImpl<>(CATEGORY_NAME, "details", this);
         }
 
+        public StrColumnBuilder<PdbxRelatedExpDataSetBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterDbSource() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "db_source", this);
+        }
+
     }
 
     public static class PdbxDatabaseStatusHistoryBuilder extends MmCifCategoryBuilder {
@@ -23469,6 +23481,10 @@ public class MmCifCategoryBuilder extends CategoryBuilderImpl<MmCifBlockBuilder,
 
         public StrColumnBuilder<EmSoftwareBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterVersion() {
             return new StrColumnBuilderImpl<>(CATEGORY_NAME, "version", this);
+        }
+
+        public StrColumnBuilder<EmSoftwareBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterReferenceDOI() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "reference_DOI", this);
         }
 
     }
@@ -33807,6 +33823,10 @@ public class MmCifCategoryBuilder extends CategoryBuilderImpl<MmCifBlockBuilder,
             return new IntColumnBuilderImpl<>(CATEGORY_NAME, "num_models", this);
         }
 
+        public IntColumnBuilder<IhmCrossLinkResultBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterModelGroupId() {
+            return new IntColumnBuilderImpl<>(CATEGORY_NAME, "model_group_id", this);
+        }
+
         public FloatColumnBuilder<IhmCrossLinkResultBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterDistanceThreshold() {
             return new FloatColumnBuilderImpl<>(CATEGORY_NAME, "distance_threshold", this);
         }
@@ -36988,6 +37008,10 @@ public class MmCifCategoryBuilder extends CategoryBuilderImpl<MmCifBlockBuilder,
             return new StrColumnBuilderImpl<>(CATEGORY_NAME, "type_other_details", this);
         }
 
+        public IntColumnBuilder<MaQaMetricBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterDataId() {
+            return new IntColumnBuilderImpl<>(CATEGORY_NAME, "data_id", this);
+        }
+
         public StrColumnBuilder<MaQaMetricBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterMode() {
             return new StrColumnBuilderImpl<>(CATEGORY_NAME, "mode", this);
         }
@@ -37378,6 +37402,166 @@ public class MmCifCategoryBuilder extends CategoryBuilderImpl<MmCifBlockBuilder,
 
         public StrColumnBuilder<MaChemCompDescriptorBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterDetails() {
             return new StrColumnBuilderImpl<>(CATEGORY_NAME, "details", this);
+        }
+
+    }
+
+    public static class MaQaMetricDihedralBuilder extends MmCifCategoryBuilder {
+        private static final String CATEGORY_NAME = "ma_qa_metric_dihedral";
+
+        public MaQaMetricDihedralBuilder(MmCifBlockBuilder parent) {
+            super(CATEGORY_NAME, parent);
+        }
+
+        public IntColumnBuilder<MaQaMetricDihedralBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterOrdinalId() {
+            return new IntColumnBuilderImpl<>(CATEGORY_NAME, "ordinal_id", this);
+        }
+
+        public StrColumnBuilder<MaQaMetricDihedralBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterAtomId1() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "atom_id_1", this);
+        }
+
+        public StrColumnBuilder<MaQaMetricDihedralBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterAtomId2() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "atom_id_2", this);
+        }
+
+        public StrColumnBuilder<MaQaMetricDihedralBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterAtomId3() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "atom_id_3", this);
+        }
+
+        public StrColumnBuilder<MaQaMetricDihedralBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterAtomId4() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "atom_id_4", this);
+        }
+
+        public IntColumnBuilder<MaQaMetricDihedralBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterMetricId() {
+            return new IntColumnBuilderImpl<>(CATEGORY_NAME, "metric_id", this);
+        }
+
+        public FloatColumnBuilder<MaQaMetricDihedralBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterMetricValue() {
+            return new FloatColumnBuilderImpl<>(CATEGORY_NAME, "metric_value", this);
+        }
+
+        public StrColumnBuilder<MaQaMetricDihedralBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterQuality() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "quality", this);
+        }
+
+        public StrColumnBuilder<MaQaMetricDihedralBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterSmartsPattern() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "smarts_pattern", this);
+        }
+
+    }
+
+    public static class MaEnergyEstimatesBuilder extends MmCifCategoryBuilder {
+        private static final String CATEGORY_NAME = "ma_energy_estimates";
+
+        public MaEnergyEstimatesBuilder(MmCifBlockBuilder parent) {
+            super(CATEGORY_NAME, parent);
+        }
+
+        public IntColumnBuilder<MaEnergyEstimatesBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterOrdinalId() {
+            return new IntColumnBuilderImpl<>(CATEGORY_NAME, "ordinal_id", this);
+        }
+
+        public StrColumnBuilder<MaEnergyEstimatesBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterEnergyType() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "energy_type", this);
+        }
+
+        public StrColumnBuilder<MaEnergyEstimatesBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterUnit() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "unit", this);
+        }
+
+        public StrColumnBuilder<MaEnergyEstimatesBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterDetails() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "details", this);
+        }
+
+        public IntColumnBuilder<MaEnergyEstimatesBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterDataId() {
+            return new IntColumnBuilderImpl<>(CATEGORY_NAME, "data_id", this);
+        }
+
+    }
+
+    public static class MaEnergyEstimatesValueBuilder extends MmCifCategoryBuilder {
+        private static final String CATEGORY_NAME = "ma_energy_estimates_value";
+
+        public MaEnergyEstimatesValueBuilder(MmCifBlockBuilder parent) {
+            super(CATEGORY_NAME, parent);
+        }
+
+        public IntColumnBuilder<MaEnergyEstimatesValueBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterOrdinalId() {
+            return new IntColumnBuilderImpl<>(CATEGORY_NAME, "ordinal_id", this);
+        }
+
+        public IntColumnBuilder<MaEnergyEstimatesValueBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterEnergyEstimatesId() {
+            return new IntColumnBuilderImpl<>(CATEGORY_NAME, "energy_estimates_id", this);
+        }
+
+        public IntColumnBuilder<MaEnergyEstimatesValueBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterModelId() {
+            return new IntColumnBuilderImpl<>(CATEGORY_NAME, "model_id", this);
+        }
+
+        public IntColumnBuilder<MaEnergyEstimatesValueBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterFeatureId() {
+            return new IntColumnBuilderImpl<>(CATEGORY_NAME, "feature_id", this);
+        }
+
+        public FloatColumnBuilder<MaEnergyEstimatesValueBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterNumericalValue() {
+            return new FloatColumnBuilderImpl<>(CATEGORY_NAME, "numerical_value", this);
+        }
+
+    }
+
+    public static class MaExperimentalValidationBuilder extends MmCifCategoryBuilder {
+        private static final String CATEGORY_NAME = "ma_experimental_validation";
+
+        public MaExperimentalValidationBuilder(MmCifBlockBuilder parent) {
+            super(CATEGORY_NAME, parent);
+        }
+
+        public IntColumnBuilder<MaExperimentalValidationBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterOrdinalId() {
+            return new IntColumnBuilderImpl<>(CATEGORY_NAME, "ordinal_id", this);
+        }
+
+        public StrColumnBuilder<MaExperimentalValidationBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterMethod() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "method", this);
+        }
+
+        public StrColumnBuilder<MaExperimentalValidationBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterType() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "type", this);
+        }
+
+        public StrColumnBuilder<MaExperimentalValidationBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterValueName() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "value_name", this);
+        }
+
+        public FloatColumnBuilder<MaExperimentalValidationBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterValue() {
+            return new FloatColumnBuilderImpl<>(CATEGORY_NAME, "value", this);
+        }
+
+        public StrColumnBuilder<MaExperimentalValidationBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterValueUnit() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "value_unit", this);
+        }
+
+        public StrColumnBuilder<MaExperimentalValidationBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterPositiveOutcome() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "positive_outcome", this);
+        }
+
+        public StrColumnBuilder<MaExperimentalValidationBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterReferenceType() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "reference_type", this);
+        }
+
+        public StrColumnBuilder<MaExperimentalValidationBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterReferenceDoi() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "reference_doi", this);
+        }
+
+        public StrColumnBuilder<MaExperimentalValidationBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterReferenceUrl() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "reference_url", this);
+        }
+
+        public StrColumnBuilder<MaExperimentalValidationBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterDetails() {
+            return new StrColumnBuilderImpl<>(CATEGORY_NAME, "details", this);
+        }
+
+        public IntColumnBuilder<MaExperimentalValidationBuilder, MmCifBlockBuilder, MmCifFileBuilder> enterDataId() {
+            return new IntColumnBuilderImpl<>(CATEGORY_NAME, "data_id", this);
         }
 
     }

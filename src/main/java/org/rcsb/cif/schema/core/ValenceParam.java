@@ -17,7 +17,7 @@ public class ValenceParam extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * Atom type symbol for atom 1 forming a bond whose
+     * The atom type symbol for atom 1 forming a bond whose
      * valence parameters are given in this category.
      * @return StrColumn
      */
@@ -26,8 +26,8 @@ public class ValenceParam extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * The formal charge of the atom 1 whose bond
-     * valence parameters are given in this category.
+     * The formal charge of the atom 1 whose bond-valence parameters
+     * are given in this category.
      * @return FloatColumn
      */
     public FloatColumn getAtom1Valence() {
@@ -44,8 +44,8 @@ public class ValenceParam extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * The formal charge of the atom 2 whose bond
-     * valence parameters are given in this category.
+     * The formal charge of the atom 2 whose bond-valence parameters
+     * are given in this category.
      * @return FloatColumn
      */
     public FloatColumn getAtom2Valence() {
@@ -53,8 +53,8 @@ public class ValenceParam extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * The bond valence parameter B used in the expression
-     * s = exp[(Ro - R)/B] where s is the valence of bond length R.
+     * The bond-valence parameter B used in the expression
+     * s = exp[(Ro - R)/B], where s is the valence of bond length R.
      * @return FloatColumn
      */
     public FloatColumn getB() {
@@ -62,7 +62,19 @@ public class ValenceParam extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * Details of valence parameters of stated bond.
+     * Code linking parameters to the key _citation.id in the reference
+     * list in category CITATION. This may be used when the source of the
+     * bond valence parameters is included in an article reference list,
+     * instead of in a separate VALENCE_REF list. Use of this item does not
+     * preclude the use also of _valence_param.ref_id.
+     * @return StrColumn
+     */
+    public StrColumn getCitationId() {
+        return new DelegatingStrColumn(parentBlock.getColumn("valence_param_citation_id"));
+    }
+
+    /**
+     * Details of or comments on the bond-valence parameters of the stated bond.
      * @return StrColumn
      */
     public StrColumn getDetails() {
@@ -78,8 +90,10 @@ public class ValenceParam extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * Code linking parameters to the key _valence_ref.id key
-     * in the reference list in category VALENCE_REF.
+     * Code linking parameters to the key _valence_ref.id in the list of
+     * standard literature references for bond-valence parameters tabulated
+     * in category VALENCE_REF. Use of this item does not preclude links to
+     * references in the article citation list using _valence_param.citation_id.
      * @return StrColumn
      */
     public StrColumn getRefId() {
@@ -87,8 +101,8 @@ public class ValenceParam extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * The bond valence parameter Ro used in the expression
-     * s = exp[(Ro - R)/B] where s is the valence of bond length R.
+     * The bond-valence parameter Ro used in the expression
+     * s = exp[(Ro - R)/B], where s is the valence of bond length R.
      * @return FloatColumn
      */
     public FloatColumn getRo() {

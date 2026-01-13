@@ -17,6 +17,27 @@ public class AuditConform extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
+     * The digital object identifier (DOI) registered to identify
+     * a CIF dictionary to which data names in this data block are
+     * conformant. This should resolve to a machine-readable dictionary
+     * and not to a descriptive landing page.
+     * 
+     * A DOI is a unique character string identifying any
+     * object of intellectual property. It provides a
+     * persistent identifier for an object on a digital network
+     * and permits the association of related current data in a
+     * structured extensible way. A DOI is an implementation
+     * of the Internet concepts of Uniform Resource Name and
+     * Universal Resource Locator managed according to the
+     * specifications of the International DOI Foundation
+     * (see https://www.doi.org/).
+     * @return StrColumn
+     */
+    public StrColumn getDictDoi() {
+        return new DelegatingStrColumn(parentBlock.getColumn("audit_conform_dict_doi"));
+    }
+
+    /**
      * File name or uniform resource locator (URL) where the
      * conformant data dictionary resides.
      * @return StrColumn

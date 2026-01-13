@@ -26,6 +26,8 @@ public class IhmCrossLinkResult extends DelegatingCategory {
                 return getEnsembleId();
             case "num_models":
                 return getNumModels();
+            case "model_group_id":
+                return getModelGroupId();
             case "distance_threshold":
                 return getDistanceThreshold();
             case "median_distance":
@@ -72,6 +74,16 @@ public class IhmCrossLinkResult extends DelegatingCategory {
      */
     public IntColumn getNumModels() {
         return delegate.getColumn("num_models", DelegatingIntColumn::new);
+    }
+
+    /**
+     * An identifier for the group of structure models whose results are described.
+     * This data item is a pointer to _ihm_model_group.id in the
+     * IHM_MODEL_GROUP category.
+     * @return IntColumn
+     */
+    public IntColumn getModelGroupId() {
+        return delegate.getColumn("model_group_id", DelegatingIntColumn::new);
     }
 
     /**

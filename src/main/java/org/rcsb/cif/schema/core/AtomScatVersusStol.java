@@ -44,7 +44,7 @@ public class AtomScatVersusStol extends DelegatingCategory.DelegatingCifCoreCate
 
     /**
      * The value of sin(θ)/λ (sin theta over lambda, stol) to which the
-     * accompanying atom symbol and scattering factor value correspond to.
+     * accompanying atom symbol and scattering factor value correspond.
      * 
      * A regularly spaced grid is strongly recommended.
      * @return FloatColumn

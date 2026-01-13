@@ -17,6 +17,21 @@ public class RefineLs extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
+     * The z-score is a measure of confidence in an absolute structure
+     * determination as described by Klar et al. (2023), based on the
+     * method of Le Page et al. (1990). For centrosymmetric structures,
+     * the only permitted value, if the data item is present, is
+     * 'inapplicable', represented by '.' .
+     * Ref:  Klar, P. B. et al. (2023). Nature Chem. 15, 848-855.
+     * Le Page, Y., Gabe, E. J. &amp; Gainsford, G. J. (1990). J. Appl. Cryst.
+     * 23, 406-411.
+     * @return FloatColumn
+     */
+    public FloatColumn getAbsStructureZ_score() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("refine_ls_abs_structure_z-score"));
+    }
+
+    /**
      * Details concerning the evaluation of the structure factors
      * using the expression given in _refine_ls.F_calc_formula.
      * @return StrColumn
@@ -77,6 +92,47 @@ public class RefineLs extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
+     * Additional details describing the sample thickness when calculated
+     * during dynamical refinement where this cannot be defined completely by
+     * the formula given in _refine_ls.sample_shape_expression.
+     * Ref: Palatinus, L., Petricek, V. &amp; Correa, C. A. (2015). Acta
+     * Cryst. A71, 235-244.
+     * @return StrColumn
+     */
+    public StrColumn getSampleShapeDetails() {
+        return new DelegatingStrColumn(parentBlock.getColumn("refine_ls_sample_shape_details"));
+    }
+
+    /**
+     * Formula for the sample thickness distribution when the sample
+     * thickness is considered during dynamical refinement.
+     * Ref: Palatinus, L., Petricek, V. &amp; Correa, C. A. (2015). Acta
+     * Cryst. A71, 235-244.
+     * @return StrColumn
+     */
+    public StrColumn getSampleShapeExpression() {
+        return new DelegatingStrColumn(parentBlock.getColumn("refine_ls_sample_shape_expression"));
+    }
+
+    /**
+     * The refined sample thickness as determined by dynamical refinement.
+     * Ref: Palatinus, L., Petricek, V. &amp; Correa, C. A. (2015). Acta
+     * Cryst. A71, 235-244.
+     * @return FloatColumn
+     */
+    public FloatColumn getSampleThickness() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("refine_ls_sample_thickness"));
+    }
+
+    /**
+     * Standard uncertainty of _refine_ls.sample_thickness.
+     * @return FloatColumn
+     */
+    public FloatColumn getSampleThicknessSu() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("refine_ls_sample_thickness_su"));
+    }
+
+    /**
      * Weighted residual factors for reflections included in the refinement
      * which satisfy the limits specified by _refine_ls.d_res_high and
      * _refine_ls.d_res_low.
@@ -88,7 +144,7 @@ public class RefineLs extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(meas) = the measured   amplitude _refine_ls.structure_factor_coef
      * Y(calc) = the calculated amplitude _refine_ls.structure_factor_coef
      * w       = the least-squares weight
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getWrFactorRef() {
@@ -248,11 +304,10 @@ public class RefineLs extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(calc) = the calculated coefficients
      * (see _refine_ls.structure_factor_coef)
      * w       = the least-squares reflection weight
-     * [1/(u^2^)]
-     * u       = standard uncertainty
+     * [1/(u^2^), where u = the standard uncertainty]
      * Nref   = the number of reflections used in the refinement
      * Nparam = the number of refined parameters
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getGoodnessOfFitAll() {
@@ -270,7 +325,7 @@ public class RefineLs extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * Least-squares goodness-of-fit parameter S for significantly
      * intense reflections, (i.e. 'observed' reflections with values
-     * greater-than the threshold set in _reflns.threshold_expression),
+     * greater than the threshold set in _reflns.threshold_expression),
      * after the final cycle. Ideally, account should be taken of
      * parameters restrained in the least-squares refinement.
      * 
@@ -283,11 +338,10 @@ public class RefineLs extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(calc)     = the calculated coefficients
      * (see _refine_ls.structure_factor_coef)
      * w       = the least-squares reflection weight
-     * [1/(u^2^)]
-     * u       = standard uncertainty
+     * [1/(u^2^), where u = the standard uncertainty]
      * Nref   = the number of reflections used in the refinement
      * Nparam = the number of refined parameters
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getGoodnessOfFitGt() {
@@ -316,11 +370,10 @@ public class RefineLs extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(calc) = the calculated coefficients
      * (see _refine_ls.structure_factor_coef)
      * w       = the least-squares reflection weight
-     * [1/(u^2^)]
-     * u       = standard uncertainty
+     * [1/(u^2^), where u = the standard uncertainty]
      * Nref   = the number of reflections used in the refinement
      * Nparam = the number of refined parameters
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getGoodnessOfFitRef() {
@@ -411,7 +464,7 @@ public class RefineLs extends DelegatingCategory.DelegatingCifCoreCategory {
      * 
      * F(meas) = the measured structure-factor amplitudes
      * F(calc) = the calculated structure-factor amplitudes
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getRFactorAll() {
@@ -431,7 +484,7 @@ public class RefineLs extends DelegatingCategory.DelegatingCifCoreCategory {
      * 
      * F(meas_gt) = the 'observed' structure-factor amplitudes
      * F(calc)    = the calculated structure-factor amplitudes
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getRFactorGt() {
@@ -450,8 +503,10 @@ public class RefineLs extends DelegatingCategory.DelegatingCifCoreCategory {
      * sum F(meas_gt)^2^
      * 
      * F(meas_gt)^2^ = squares of the 'observed' structure-factor
+     * amplitudes
      * F(calc)^2^    = squares of the calculated structure-factor
-     * and the sum is taken over the specified reflections
+     * amplitudes
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getRFsqdFactor() {
@@ -470,7 +525,7 @@ public class RefineLs extends DelegatingCategory.DelegatingCifCoreCategory {
      * 
      * I(meas_gt) = the net 'observed' intensities
      * I(calc)    = the net calculated intensities
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getRIFactor() {
@@ -506,7 +561,7 @@ public class RefineLs extends DelegatingCategory.DelegatingCifCoreCategory {
      * (see _refine_ls.number_parameters)
      * 
      * sum     is taken over the specified reflections
-     * sum~r~  is taken over the restraints
+     * sum~r~  is taken over the restraints.
      * @return FloatColumn
      */
     public FloatColumn getRestrainedSAll() {
@@ -542,7 +597,7 @@ public class RefineLs extends DelegatingCategory.DelegatingCifCoreCategory {
      * (see _refine_ls.number_parameters)
      * 
      * sum     is taken over the specified reflections
-     * sum~r~  is taken over the restraints
+     * sum~r~  is taken over the restraints.
      * @return FloatColumn
      */
     public FloatColumn getRestrainedSGt() {
@@ -630,7 +685,7 @@ public class RefineLs extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(meas) = the measured   amplitude _refine_ls.structure_factor_coef
      * Y(calc) = the calculated amplitude _refine_ls.structure_factor_coef
      * w       = the least-squares weight
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getWrFactorAll() {
@@ -650,7 +705,7 @@ public class RefineLs extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(meas_gt) = the 'observed' amplitude _refine_ls.structure_factor_coef
      * Y(calc)    = the calculated amplitude _refine_ls.structure_factor_coef
      * w        = the least-squares weight
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getWrFactorGt() {

@@ -17,6 +17,42 @@ public class DiffrnMeasurement extends DelegatingCategory.DelegatingCifCoreCateg
     }
 
     /**
+     * Yes or no flag indicating if the radiation beam illuminates the sample
+     * at an angle that is rotated about a precession axis.
+     * @return StrColumn
+     */
+    public StrColumn getMethodPrecession() {
+        return new DelegatingStrColumn(parentBlock.getColumn("diffrn_measurement_method_precession"));
+    }
+
+    /**
+     * Code describing the technique used to sample as completely as possible
+     * the accessible range of reciprocal space.
+     * @return StrColumn
+     */
+    public StrColumn getRotationMode() {
+        return new DelegatingStrColumn(parentBlock.getColumn("diffrn_measurement_rotation_mode"));
+    }
+
+    /**
+     * Yes or no flag indicating if a tracking method to follow the
+     * crystal was used in the data acquisition. Typically used to track
+     * very small crystals in electron diffraction experiments.
+     * @return StrColumn
+     */
+    public StrColumn getSampleTracking() {
+        return new DelegatingStrColumn(parentBlock.getColumn("diffrn_measurement_sample_tracking"));
+    }
+
+    /**
+     * Description of the method used to follow the crystal during data collection.
+     * @return StrColumn
+     */
+    public StrColumn getSampleTrackingMethod() {
+        return new DelegatingStrColumn(parentBlock.getColumn("diffrn_measurement_sample_tracking_method"));
+    }
+
+    /**
      * The way in which the sample is attached to the sample holder,
      * including the type of adhesive material used if relevant. The sample
      * holder is usually wholly outside the beam, whereas the attachment

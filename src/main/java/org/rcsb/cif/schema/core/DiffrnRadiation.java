@@ -33,6 +33,18 @@ public class DiffrnRadiation extends DelegatingCategory.DelegatingCifCoreCategor
     }
 
     /**
+     * Code describing the optical configuration of the incident beam at
+     * the sample. For electron diffraction, parallel illumination is
+     * the normal mode in transmission electron microscopy (TEM),
+     * convergent-beam in scanning transmission electron microscopy
+     * (STEM).
+     * @return StrColumn
+     */
+    public StrColumn getIlluminationMode() {
+        return new DelegatingStrColumn(parentBlock.getColumn("diffrn_radiation_illumination_mode"));
+    }
+
+    /**
      * Half-width of the incident beam perpendicular to the diffraction plane.
      * @return FloatColumn
      */
@@ -141,24 +153,6 @@ public class DiffrnRadiation extends DelegatingCategory.DelegatingCifCoreCategor
      */
     public StrColumn getDetermination() {
         return new DelegatingStrColumn(parentBlock.getColumn("diffrn_radiation_wavelength_determination"));
-    }
-
-    /**
-     * Code identifying the radiation used in the diffraction measurements.
-     * This is linked to _diffrn_refln.wavelength_id and _refln.wavelength_id
-     * @return StrColumn
-     */
-    public StrColumn getWavelengthId() {
-        return new DelegatingStrColumn(parentBlock.getColumn("diffrn_radiation_wavelength_id"));
-    }
-
-    /**
-     * Code identifying the radiation used in the diffraction measurements.
-     * This is linked to _diffrn_refln.wavelength_id and _refln.wavelength_id
-     * @return StrColumn
-     */
-    public StrColumn getId() {
-        return new DelegatingStrColumn(parentBlock.getColumn("diffrn_radiation_wavelength_id"));
     }
 
 }

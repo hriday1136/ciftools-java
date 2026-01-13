@@ -17,7 +17,7 @@ public class Refln extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * The calculated real structure-factor component A =|Fcalc|cos(phase)
+     * The calculated real structure-factor component A =|Fcalc|cos(phase).
      * @return FloatColumn
      */
     public FloatColumn getACalc() {
@@ -33,7 +33,7 @@ public class Refln extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * The measured real structure-factor component A =|Fmeas|cos(phase)
+     * The measured real structure-factor component A =|Fmeas|cos(phase).
      * @return FloatColumn
      */
     public FloatColumn getAMeas() {
@@ -49,7 +49,7 @@ public class Refln extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * The calculated imaginary structure-factor component B =|Fcalc|sin(phase)
+     * The calculated imaginary structure-factor component B =|Fcalc|sin(phase).
      * @return FloatColumn
      */
     public FloatColumn getBCalc() {
@@ -65,7 +65,7 @@ public class Refln extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * The measured imaginary structure-factor component B =|Fmeas|sin(phase)
+     * The measured imaginary structure-factor component B =|Fmeas|sin(phase).
      * @return FloatColumn
      */
     public FloatColumn getBMeas() {
@@ -105,7 +105,7 @@ public class Refln extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * The structure factor amplitude for the reflection calculated from
+     * The structure-factor amplitude for the reflection calculated from
      * the atom site data.
      * @return FloatColumn
      */
@@ -122,7 +122,7 @@ public class Refln extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * The structure factor vector for the reflection calculated from
+     * The structure-factor vector for the reflection calculated from
      * the atom site data.
      * @return StrColumn
      */
@@ -139,7 +139,7 @@ public class Refln extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * The structure factor amplitude for the reflection derived from the
+     * The structure-factor amplitude for the reflection derived from the
      * measured intensities.
      * @return FloatColumn
      */
@@ -148,7 +148,7 @@ public class Refln extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * The structure factor amplitude squared for the reflection calculated from
+     * The structure-factor amplitude squared for the reflection calculated from
      * the atom site data.
      * @return FloatColumn
      */
@@ -165,7 +165,7 @@ public class Refln extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * The structure factor amplitude for the reflection derived from the
+     * The structure-factor amplitude for the reflection derived from the
      * measured intensities.
      * @return FloatColumn
      */
@@ -349,7 +349,11 @@ public class Refln extends DelegatingCategory.DelegatingCifCoreCategory {
      * symmetry to the present reflection. In the Laue symmetry, Friedel
      * opposites (h k l and -h -k -l) are equivalent. Tables of
      * symmetry-equivalent reflections are available in International
-     * Tables for Crystallography, Volume A (1987), section 10.2.
+     * Tables for Crystallography, Volume A (2016), Table 3.2.3.2.
+     * 
+     * Ref: International Tables for Crystallography (2016). Volume A,
+     * Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+     * Chichester: John Wiley &amp; Sons.
      * @return IntColumn
      */
     public IntColumn getSymmetryMultiplicity() {

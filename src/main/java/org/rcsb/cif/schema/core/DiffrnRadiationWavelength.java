@@ -17,6 +17,15 @@ public class DiffrnRadiationWavelength extends DelegatingCategory.DelegatingCifC
     }
 
     /**
+     * Code identifying the radiation used in the diffraction measurements.
+     * This is linked to _diffrn_refln.wavelength_id and _refln.wavelength_id
+     * @return StrColumn
+     */
+    public StrColumn getId() {
+        return new DelegatingStrColumn(parentBlock.getColumn("diffrn_radiation_wavelength_id"));
+    }
+
+    /**
      * Details of the radiation source or energy spectrum.
      * @return StrColumn
      */
@@ -56,15 +65,6 @@ public class DiffrnRadiationWavelength extends DelegatingCategory.DelegatingCifC
      */
     public StrColumn getDetermination() {
         return new DelegatingStrColumn(parentBlock.getColumn("diffrn_radiation_wavelength_determination"));
-    }
-
-    /**
-     * Code identifying the radiation used in the diffraction measurements.
-     * This is linked to _diffrn_refln.wavelength_id and _refln.wavelength_id
-     * @return StrColumn
-     */
-    public StrColumn getId() {
-        return new DelegatingStrColumn(parentBlock.getColumn("diffrn_radiation_wavelength_id"));
     }
 
     /**

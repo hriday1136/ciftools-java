@@ -37,10 +37,10 @@ public class SymmetryEquiv extends DelegatingCategory.DelegatingCifCoreCategory 
      * translations defined by fractions, an equivalent position
      * X' is generated from a given position X by the equation
      * 
-     * X' = WX + w
+     * X' = WX + w.
      * 
      * (Note: X is used to represent bold_italics_x in International
-     * Tables for Crystallography Vol. A, Part 5)
+     * Tables for Crystallography Vol. A, Part 5.)
      * 
      * When a list of symmetry operations is given, it must contain
      * a complete set of coordinate representatives which generates

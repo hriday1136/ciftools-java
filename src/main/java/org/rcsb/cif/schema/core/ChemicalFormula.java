@@ -51,7 +51,7 @@ public class ChemicalFormula extends DelegatingCategory.DelegatingCifCoreCategor
      * 3. Parentheses are not used within moieties but may surround
      * a moiety. Parentheses may not be nested.
      * 4. Charges should be placed at the end of the moiety. The
-     * Singlege '+' or '-' may be preceded by a numerical multiplier
+     * charge '+' or '-' may be preceded by a numerical multiplier
      * and should be separated from the last (element symbol +
      * count) by a space. Pre- or post-multipliers may be used for
      * individual moieties.
@@ -82,7 +82,7 @@ public class ChemicalFormula extends DelegatingCategory.DelegatingCifCoreCategor
     /**
      * Chemical formulae in which all discrete bonded residues and ions are
      * summed over the constituent elements, following the ordering given
-     * in rule 5 of the CATEGORY description. Parentheses normally not used.
+     * in rule 5 of the category description. Parentheses normally not used.
      * @return StrColumn
      */
     public StrColumn getSum() {
@@ -91,7 +91,7 @@ public class ChemicalFormula extends DelegatingCategory.DelegatingCifCoreCategor
 
     /**
      * Mass corresponding to the formulae _chemical_formula.structural,
-     * *_IUPAC, *_moiety or *_sum and, together with the Z value and cell
+     * *.IUPAC, *.moiety or *.sum and, together with the Z value and cell
      * parameters yield the density given as _exptl_crystal.density_diffrn.
      * @return FloatColumn
      */

@@ -83,7 +83,7 @@ public class ReflnsClass extends DelegatingCategory.DelegatingCifCoreCategory {
      * F(meas) = the measured structure-factor amplitudes
      * F(calc) = the calculated structure-factor amplitudes
      * 
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getRFactorAll() {
@@ -99,10 +99,10 @@ public class ReflnsClass extends DelegatingCategory.DelegatingCifCoreCategory {
      * R(F gt) = --------------------------------
      * sum | F(meas_gt) |
      * 
-     * F(meas) = the measured structure-factor amplitudes
+     * F(meas_gt) = the measured structure-factor amplitudes
      * F(calc) = the calculated structure-factor amplitudes
      * 
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getRFactorGt() {
@@ -118,10 +118,10 @@ public class ReflnsClass extends DelegatingCategory.DelegatingCifCoreCategory {
      * R(Fsqd gt) = ------------------------------------
      * sum F(meas_gt)^2^
      * 
-     * F(meas_gt)^2^ = square of the 'observed' structure-factor
-     * F(calc   )^2^ = square of the calculated structure-factor
+     * F(meas_gt)^2^ = square of the 'observed' structure factors
+     * F(calc   )^2^ = square of the calculated structure factors
      * 
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getRFsqdFactor() {
@@ -137,10 +137,10 @@ public class ReflnsClass extends DelegatingCategory.DelegatingCifCoreCategory {
      * R(I gt) =  ----------------------------
      * sum | I(meas_gt) |
      * 
-     * I(meas_gt) = the net 'observed' intensity
-     * I(calc   ) = the net calculated intensity
+     * I(meas_gt) = the net 'observed' intensities
+     * I(calc   ) = the net calculated intensities
      * 
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getRIFactor() {

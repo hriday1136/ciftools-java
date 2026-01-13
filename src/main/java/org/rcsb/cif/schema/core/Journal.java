@@ -33,14 +33,6 @@ public class Journal extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * Journal data items are defined by the journal staff.
-     * @return StrColumn
-     */
-    public StrColumn getDataValidationNumber() {
-        return new DelegatingStrColumn(parentBlock.getColumn("journal_data_validation_number"));
-    }
-
-    /**
      * Issue identifier within the journal.
      * @return StrColumn
      */
@@ -141,14 +133,6 @@ public class Journal extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * Data validation number assigned to journal.
-     * @return StrColumn
-     */
-    public StrColumn getValidationNumber() {
-        return new DelegatingStrColumn(parentBlock.getColumn("journal_validation_number"));
-    }
-
-    /**
      * Volume number of the publication.
      * @return IntColumn
      */
@@ -162,6 +146,26 @@ public class Journal extends DelegatingCategory.DelegatingCifCoreCategory {
      */
     public IntColumn getYear() {
         return new DelegatingIntColumn(parentBlock.getColumn("journal_year"));
+    }
+
+    /**
+     * Data validation number identifying a published structure that
+     * has been processed by a standard validation/checking procedure;
+     * assigned by a journal.
+     * @return StrColumn
+     */
+    public StrColumn getDataValidationNumber() {
+        return new DelegatingStrColumn(parentBlock.getAliasedColumn("journal_data_validation_number", "journal_validation_number"));
+    }
+
+    /**
+     * Data validation number identifying a published structure that
+     * has been processed by a standard validation/checking procedure;
+     * assigned by a journal.
+     * @return StrColumn
+     */
+    public StrColumn getValidationNumber() {
+        return new DelegatingStrColumn(parentBlock.getAliasedColumn("journal_data_validation_number", "journal_validation_number"));
     }
 
     /**

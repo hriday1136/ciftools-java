@@ -27,14 +27,6 @@ public class Geom extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * Minimum permitted "bonded" distance between two atom sites.
-     * @return FloatColumn
-     */
-    public FloatColumn getBondDistanceMin() {
-        return new DelegatingFloatColumn(parentBlock.getColumn("geom_bond_distance_min"));
-    }
-
-    /**
      * Increment added to the bond radii for the atomic species to
      * specify the maximum permitted "contact" distance between two
      * "non-bonded" atom sites.
@@ -45,11 +37,19 @@ public class Geom extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
+     * Minimum permitted "bonded" distance between two atom sites.
+     * @return FloatColumn
+     */
+    public FloatColumn getMinBondDistanceCutoff() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("geom_min_bond_distance_cutoff"));
+    }
+
+    /**
      * Minimum permitted "contact" distance between two "non-bonded" atom sites.
      * @return FloatColumn
      */
-    public FloatColumn getContactDistanceMin() {
-        return new DelegatingFloatColumn(parentBlock.getColumn("geom_contact_distance_min"));
+    public FloatColumn getMinContactDistanceCutoff() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("geom_min_contact_distance_cutoff"));
     }
 
     /**

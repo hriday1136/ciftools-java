@@ -43,9 +43,9 @@ public class Symmetry extends DelegatingCategory.DelegatingCifCoreCategory {
 
     /**
      * The full international Hermann-Mauguin space-group symbol as
-     * defined in Section 2.2.3 and given as the second item of the
-     * second line of each of the space-group tables of Part 7 of
-     * International Tables for Crystallography Volume A (2002).
+     * defined in Section 2.1.3.3 and given as the second item of the
+     * second line of each of the space-group tables of Chapter 2.3 of
+     * International Tables for Crystallography Volume A (2016).
      * 
      * Each component of the space-group name is separated by a
      * space or an underscore character. The use of a space is
@@ -67,9 +67,9 @@ public class Symmetry extends DelegatingCategory.DelegatingCifCoreCategory {
      * _space_group.name_Hall, or list the symmetry operations
      * or generators.
      * 
-     * Ref: International Tables for Crystallography (2002). Volume A,
-     * Space-group symmetry, edited by Th. Hahn, 5th ed.
-     * Dordrecht: Kluwer Academic Publishers.
+     * Ref: International Tables for Crystallography (2016). Volume A,
+     * Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+     * Chichester: John Wiley &amp; Sons.
      * @return StrColumn
      */
     public StrColumn getSpaceGroupNameH_M() {

@@ -59,7 +59,10 @@ public class AuditSupport extends DelegatingCategory.DelegatingCifCoreCategory {
      * accordance with CrossRef guidelines, the full URI of
      * the resolved page describing the funding organization
      * should be given (i.e. including the https://doi.org/
-     * component).
+     * DOI resolver prefix). Note that it may be necessary to
+     * URL-encode certain special characters in the DOI suffix
+     * for the URI to resolve correctly through CrossRef
+     * (e.g. the number sign '#' must be encoded as '%23').
      * @return StrColumn
      */
     public StrColumn getFundingOrganizationDoi() {

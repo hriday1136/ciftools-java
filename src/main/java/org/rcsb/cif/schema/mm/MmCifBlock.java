@@ -1476,6 +1476,14 @@ public class MmCifBlock extends DelegatingBlock {
                 return getMaAssociatedArchiveFileDetails();
             case "ma_chem_comp_descriptor":
                 return getMaChemCompDescriptor();
+            case "ma_qa_metric_dihedral":
+                return getMaQaMetricDihedral();
+            case "ma_energy_estimates":
+                return getMaEnergyEstimates();
+            case "ma_energy_estimates_value":
+                return getMaEnergyEstimatesValue();
+            case "ma_experimental_validation":
+                return getMaExperimentalValidation();
             default:
                 return new DelegatingCategory(category);
         }
@@ -9077,6 +9085,53 @@ public class MmCifBlock extends DelegatingBlock {
      */
     public MaChemCompDescriptor getMaChemCompDescriptor() {
         return delegate.getCategory("ma_chem_comp_descriptor", MaChemCompDescriptor::new);
+    }
+
+    /**
+     * Data items in the MA_QA_METRIC_DIHEDRAL category capture the analysis of
+     * individual torsion angles of a molecule. This analysis may involve dihedral
+     * scanning using quantum-mechanical calculations, or a comparison of torsion
+     * angle values with probability distributions obtained from experimental data
+     * (e.g. TorsionAnalyzer). Here, the main output is not the value from the
+     * analysis, but rather a quality classification resulting from an assessment
+     * of the energetic state or likelihood of each dihedral angle.
+     * @return MaQaMetricDihedral
+     */
+    public MaQaMetricDihedral getMaQaMetricDihedral() {
+        return delegate.getCategory("ma_qa_metric_dihedral", MaQaMetricDihedral::new);
+    }
+
+    /**
+     * Data items in the MA_ENERGY_ESTIMATES category record the details of the
+     * type of energy estimate calculated for the stored models.
+     * @return MaEnergyEstimates
+     */
+    public MaEnergyEstimates getMaEnergyEstimates() {
+        return delegate.getCategory("ma_energy_estimates", MaEnergyEstimates::new);
+    }
+
+    /**
+     * Data items in the MA_ENERGY_ESTIMATES_VALUE category record the values
+     * per model or feature for a given energy estimate. Additional
+     * data items in the MA_ENERGY_ESTIMATES can be added if needed.
+     * @return MaEnergyEstimatesValue
+     */
+    public MaEnergyEstimatesValue getMaEnergyEstimatesValue() {
+        return delegate.getCategory("ma_energy_estimates_value", MaEnergyEstimatesValue::new);
+    }
+
+    /**
+     * Data items in the MA_EXPERIMENTAL_VALIDATION category describe how the existence
+     * of the modeled system was experimentally validated, often through multiple
+     * complementary experiments. The aim is to provide experimental evidence supporting
+     * the biological plausibility of the input, such as entities forming a complex with
+     * a specific stoichiometry or designed proteins being able to fold. It can also include
+     * negative evidence (e.g. for models used to distinguish positive and negative results).
+     * It is not meant to capture experimental data used in modeling (e.g. via spatial restraints).
+     * @return MaExperimentalValidation
+     */
+    public MaExperimentalValidation getMaExperimentalValidation() {
+        return delegate.getCategory("ma_experimental_validation", MaExperimentalValidation::new);
     }
 
 }

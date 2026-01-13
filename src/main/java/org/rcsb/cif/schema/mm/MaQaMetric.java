@@ -28,6 +28,8 @@ public class MaQaMetric extends DelegatingCategory {
                 return getType();
             case "type_other_details":
                 return getTypeOtherDetails();
+            case "data_id":
+                return getDataId();
             case "mode":
                 return getMode();
             case "software_group_id":
@@ -75,6 +77,15 @@ public class MaQaMetric extends DelegatingCategory {
      */
     public StrColumn getTypeOtherDetails() {
         return delegate.getColumn("type_other_details", DelegatingStrColumn::new);
+    }
+
+    /**
+     * The data_id identifier corresponding to the model quality assessment, if available.
+     * This data item is a pointer to _ma_data.id in the MA_DATA category.
+     * @return IntColumn
+     */
+    public IntColumn getDataId() {
+        return delegate.getColumn("data_id", DelegatingIntColumn::new);
     }
 
     /**

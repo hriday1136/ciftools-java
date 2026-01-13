@@ -28,6 +28,8 @@ public class PdbxRelatedExpDataSet extends DelegatingCategory {
                 return getDataSetType();
             case "details":
                 return getDetails();
+            case "db_source":
+                return getDbSource();
             default:
                 return new DelegatingColumn(column);
         }
@@ -72,6 +74,14 @@ public class PdbxRelatedExpDataSet extends DelegatingCategory {
      */
     public StrColumn getDetails() {
         return delegate.getColumn("details", DelegatingStrColumn::new);
+    }
+
+    /**
+     * For external sources, the name of the resource.
+     * @return StrColumn
+     */
+    public StrColumn getDbSource() {
+        return delegate.getColumn("db_source", DelegatingStrColumn::new);
     }
 
 }

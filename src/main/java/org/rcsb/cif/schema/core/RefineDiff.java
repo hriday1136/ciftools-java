@@ -17,6 +17,59 @@ public class RefineDiff extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
+     * Maximum electrostatic potential value in a difference Fourier map.
+     * @return FloatColumn
+     */
+    public FloatColumn getPotentialMax() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("refine_diff_potential_max"));
+    }
+
+    /**
+     * Standard uncertainty of _refine_diff.potential_max.
+     * @return FloatColumn
+     */
+    public FloatColumn getPotentialMaxSu() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("refine_diff_potential_max_su"));
+    }
+
+    /**
+     * Minimum electrostatic potential value in a difference Fourier map.
+     * @return FloatColumn
+     */
+    public FloatColumn getPotentialMin() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("refine_diff_potential_min"));
+    }
+
+    /**
+     * Standard uncertainty of _refine_diff.potential_min.
+     * @return FloatColumn
+     */
+    public FloatColumn getPotentialMinSu() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("refine_diff_potential_min_su"));
+    }
+
+    /**
+     * Root mean square electrostatic potential value in a difference Fourier map.
+     * This value is measured with respect to the arithmetic mean
+     * potential and is derived from summations over each grid point
+     * in the asymmetric unit of the cell. This quantity is useful
+     * for assessing the significance of *_min and *_max values,
+     * and also for defining suitable contour levels.
+     * @return FloatColumn
+     */
+    public FloatColumn getPotentialRms() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("refine_diff_potential_rms"));
+    }
+
+    /**
+     * Standard uncertainty of _refine_diff.potential_RMS.
+     * @return FloatColumn
+     */
+    public FloatColumn getPotentialRmsSu() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("refine_diff_potential_rms_su"));
+    }
+
+    /**
      * Maximum density value in a difference Fourier map.
      * @return FloatColumn
      */

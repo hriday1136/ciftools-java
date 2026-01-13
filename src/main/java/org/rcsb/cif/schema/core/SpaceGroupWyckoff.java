@@ -42,9 +42,9 @@ public class SpaceGroupWyckoff extends DelegatingCategory.DelegatingCifCoreCateg
      * enumeration values '\a' and α are equivalent, and correspond to
      * the Greek letter 'alpha' used in International Tables.
      * 
-     * Ref: International Tables for Crystallography (2002). Volume A,
-     * Space-group symmetry, edited by Th. Hahn, 5th ed.
-     * Dordrecht: Kluwer Academic Publishers.
+     * Ref: International Tables for Crystallography (2016). Volume A,
+     * Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+     * Chichester: John Wiley &amp; Sons.
      * @return StrColumn
      */
     public StrColumn getLetter() {
@@ -56,9 +56,9 @@ public class SpaceGroupWyckoff extends DelegatingCategory.DelegatingCifCoreCateg
      * International Tables Volume A. It is the number of equivalent
      * sites per conventional unit cell.
      * 
-     * Ref: International Tables for Crystallography (2002). Volume A,
-     * Space-group symmetry, edited by Th. Hahn, 5th ed.
-     * Dordrecht: Kluwer Academic Publishers.
+     * Ref: International Tables for Crystallography (2016). Volume A,
+     * Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+     * Chichester: John Wiley &amp; Sons.
      * @return IntColumn
      */
     public IntColumn getMultiplicity() {
@@ -71,11 +71,11 @@ public class SpaceGroupWyckoff extends DelegatingCategory.DelegatingCifCoreCateg
      * space group. The site-symmetry symbol indicates the symmetry
      * in the symmetry direction determined by the Hermann-Mauguin
      * symbol of the space group (see International Tables for
-     * Crystallography Volume A, Section 2.2.12).
+     * Crystallography Volume A, Section 2.1.3.12).
      * 
-     * Ref: International Tables for Crystallography (2002). Volume A,
-     * Space-group symmetry, edited by Th. Hahn, 5th ed.
-     * Dordrecht: Kluwer Academic Publishers.
+     * Ref: International Tables for Crystallography (2016). Volume A,
+     * Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+     * Chichester: John Wiley &amp; Sons.
      * @return StrColumn
      */
     public StrColumn getSiteSymmetry() {

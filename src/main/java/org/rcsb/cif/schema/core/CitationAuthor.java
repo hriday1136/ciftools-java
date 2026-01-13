@@ -17,7 +17,7 @@ public class CitationAuthor extends DelegatingCategory.DelegatingCifCoreCategory
     }
 
     /**
-     * Code identifier in the CITATION data list. The value of must match
+     * Code identifier in the CITATION data list. The value must match
      * an identifier specified in the CITATION list.
      * @return StrColumn
      */

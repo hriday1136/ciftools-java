@@ -92,7 +92,7 @@ public class MaAssociatedArchiveFileDetails extends DelegatingCategory {
     }
 
     /**
-     * The data_id identifier corresponding to the associated archive file, if availble.
+     * The data_id identifier corresponding to the associated archive file, if available.
      * This data item is a pointer to _ma_data.id in the MA_DATA category.
      * @return IntColumn
      */

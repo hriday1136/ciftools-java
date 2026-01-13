@@ -23,8 +23,9 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * how the remaining non-hydrogen sites were located; and the
      * *_hydrogens code identifies how the hydrogen sites were located.
      * 
-     * Ref: Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
-     * Miller, R. and Usón, I. (2001). Ab initio phasing.
+     * Ref: Oszlányi, G. &amp; Süto, A. (2004). Acta Cryst. A60, 134-141;
+     * Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
+     * Miller, R. &amp; Usón, I. (2001). Ab initio phasing.
      * In International Tables for Crystallography,
      * Vol. F. Crystallography of biological macromolecules,
      * edited by M. G. Rossmann and E. Arnold, ch. 16.1.
@@ -42,7 +43,8 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * how the remaining non-hydrogen sites were located; and the
      * *_hydrogens code identifies how the hydrogen sites were located.
      * 
-     * Ref: Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
+     * Ref: Oszlányi, G. &amp; Süto, A. (2004). Acta Cryst. A60, 134-141;
+     * Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
      * Miller, R. and Usón, I. (2001). Ab initio phasing.
      * In International Tables for Crystallography,
      * Vol. F. Crystallography of biological macromolecules,
@@ -61,7 +63,8 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * how the remaining non-hydrogen sites were located; and the
      * *_hydrogens code identifies how the hydrogen sites were located.
      * 
-     * Ref: Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
+     * Ref: Oszlányi, G. &amp; Süto, A. (2004). Acta Cryst. A60, 134-141;
+     * Sheldrick, G. M., Hauptman, H. A., Weeks, C. M.,
      * Miller, R. and Usón, I. (2001). Ab initio phasing.
      * In International Tables for Crystallography,
      * Vol. F. Crystallography of biological macromolecules,
@@ -111,9 +114,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getCartnTransfMatrix11() {
@@ -130,9 +136,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getMat11() {
@@ -149,9 +158,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getCartnTransfMatrix12() {
@@ -168,9 +180,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getMat12() {
@@ -187,9 +202,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getCartnTransfMatrix13() {
@@ -206,9 +224,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getMat13() {
@@ -225,9 +246,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getCartnTransfMatrix21() {
@@ -244,9 +268,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getMat21() {
@@ -263,9 +290,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getCartnTransfMatrix22() {
@@ -282,9 +312,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getMat22() {
@@ -301,9 +334,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getCartnTransfMatrix23() {
@@ -320,9 +356,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getMat23() {
@@ -339,9 +378,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getCartnTransfMatrix31() {
@@ -358,9 +400,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getMat31() {
@@ -377,9 +422,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getCartnTransfMatrix32() {
@@ -396,9 +444,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getMat32() {
@@ -415,9 +466,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getCartnTransfMatrix33() {
@@ -434,9 +488,12 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
      * ( y' )Cartesian  = mat|21 22 23| * ( y )fractional + vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getMat33() {
@@ -522,16 +579,19 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * Matrix used to transform Cartesian coordinates in the ATOM_SITE category
      * to fractional coordinates. The axial alignments of this transformation are
-     * described in _atom_sites_fract_transform.axes. The 3x1 translation is
+     * described in _atom_sites_fract_transform.axes. The 3 x 1 translation is
      * defined in _atom_sites_fract_transform.vector.
      * 
      * x'                  |11 12 13|     x                  | 1 |
      * ( y' )fractional = mat|21 22 23| * ( y )Cartesian +  vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getFractTransfMatrix11() {
@@ -541,16 +601,19 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * Matrix used to transform Cartesian coordinates in the ATOM_SITE category
      * to fractional coordinates. The axial alignments of this transformation are
-     * described in _atom_sites_fract_transform.axes. The 3x1 translation is
+     * described in _atom_sites_fract_transform.axes. The 3 x 1 translation is
      * defined in _atom_sites_fract_transform.vector.
      * 
      * x'                  |11 12 13|     x                  | 1 |
      * ( y' )fractional = mat|21 22 23| * ( y )Cartesian +  vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getFractTransfMatrix12() {
@@ -560,16 +623,19 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * Matrix used to transform Cartesian coordinates in the ATOM_SITE category
      * to fractional coordinates. The axial alignments of this transformation are
-     * described in _atom_sites_fract_transform.axes. The 3x1 translation is
+     * described in _atom_sites_fract_transform.axes. The 3 x 1 translation is
      * defined in _atom_sites_fract_transform.vector.
      * 
      * x'                  |11 12 13|     x                  | 1 |
      * ( y' )fractional = mat|21 22 23| * ( y )Cartesian +  vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getFractTransfMatrix13() {
@@ -579,16 +645,19 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * Matrix used to transform Cartesian coordinates in the ATOM_SITE category
      * to fractional coordinates. The axial alignments of this transformation are
-     * described in _atom_sites_fract_transform.axes. The 3x1 translation is
+     * described in _atom_sites_fract_transform.axes. The 3 x 1 translation is
      * defined in _atom_sites_fract_transform.vector.
      * 
      * x'                  |11 12 13|     x                  | 1 |
      * ( y' )fractional = mat|21 22 23| * ( y )Cartesian +  vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getFractTransfMatrix21() {
@@ -598,16 +667,19 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * Matrix used to transform Cartesian coordinates in the ATOM_SITE category
      * to fractional coordinates. The axial alignments of this transformation are
-     * described in _atom_sites_fract_transform.axes. The 3x1 translation is
+     * described in _atom_sites_fract_transform.axes. The 3 x 1 translation is
      * defined in _atom_sites_fract_transform.vector.
      * 
      * x'                  |11 12 13|     x                  | 1 |
      * ( y' )fractional = mat|21 22 23| * ( y )Cartesian +  vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getFractTransfMatrix22() {
@@ -617,16 +689,19 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * Matrix used to transform Cartesian coordinates in the ATOM_SITE category
      * to fractional coordinates. The axial alignments of this transformation are
-     * described in _atom_sites_fract_transform.axes. The 3x1 translation is
+     * described in _atom_sites_fract_transform.axes. The 3 x 1 translation is
      * defined in _atom_sites_fract_transform.vector.
      * 
      * x'                  |11 12 13|     x                  | 1 |
      * ( y' )fractional = mat|21 22 23| * ( y )Cartesian +  vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getFractTransfMatrix23() {
@@ -636,16 +711,19 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * Matrix used to transform Cartesian coordinates in the ATOM_SITE category
      * to fractional coordinates. The axial alignments of this transformation are
-     * described in _atom_sites_fract_transform.axes. The 3x1 translation is
+     * described in _atom_sites_fract_transform.axes. The 3 x 1 translation is
      * defined in _atom_sites_fract_transform.vector.
      * 
      * x'                  |11 12 13|     x                  | 1 |
      * ( y' )fractional = mat|21 22 23| * ( y )Cartesian +  vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getFractTransfMatrix31() {
@@ -655,16 +733,19 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * Matrix used to transform Cartesian coordinates in the ATOM_SITE category
      * to fractional coordinates. The axial alignments of this transformation are
-     * described in _atom_sites_fract_transform.axes. The 3x1 translation is
+     * described in _atom_sites_fract_transform.axes. The 3 x 1 translation is
      * defined in _atom_sites_fract_transform.vector.
      * 
      * x'                  |11 12 13|     x                  | 1 |
      * ( y' )fractional = mat|21 22 23| * ( y )Cartesian +  vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getFractTransfMatrix32() {
@@ -674,16 +755,19 @@ public class AtomSites extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * Matrix used to transform Cartesian coordinates in the ATOM_SITE category
      * to fractional coordinates. The axial alignments of this transformation are
-     * described in _atom_sites_fract_transform.axes. The 3x1 translation is
+     * described in _atom_sites_fract_transform.axes. The 3 x 1 translation is
      * defined in _atom_sites_fract_transform.vector.
      * 
      * x'                  |11 12 13|     x                  | 1 |
      * ( y' )fractional = mat|21 22 23| * ( y )Cartesian +  vec| 2 |
      * z'                  |31 32 33|     z                  | 3 |
      * 
-     * The default transformation matrix uses Rollet's axial assignments with
+     * The default transformation matrix uses Rollett's axial assignments with
      * cell vectors a,b,c aligned with orthogonal axes X,Y,Z so that c||Z and
      * b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getFractTransfMatrix33() {

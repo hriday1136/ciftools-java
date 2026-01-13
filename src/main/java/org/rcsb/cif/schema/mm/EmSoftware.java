@@ -35,6 +35,8 @@ public class EmSoftware extends DelegatingCategory {
                 return getName();
             case "version":
                 return getVersion();
+            case "reference_DOI":
+                return getReferenceDOI();
             default:
                 return new DelegatingColumn(column);
         }
@@ -103,6 +105,15 @@ public class EmSoftware extends DelegatingCategory {
      */
     public StrColumn getVersion() {
         return delegate.getColumn("version", DelegatingStrColumn::new);
+    }
+
+    /**
+     * Document Object Identifier used by doi.org to uniquely
+     * identify software being used.
+     * @return StrColumn
+     */
+    public StrColumn getReferenceDOI() {
+        return delegate.getColumn("reference_DOI", DelegatingStrColumn::new);
     }
 
 }

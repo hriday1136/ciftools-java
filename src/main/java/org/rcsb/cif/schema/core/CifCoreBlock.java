@@ -210,8 +210,6 @@ public class CifCoreBlock extends DelegatingBlock {
                 return getRefineLsClass();
             case "function":
                 return getFunction();
-            case "cell_angle":
-                return getCellAngle();
             case "chem_comp_bond":
                 return getChemCompBond();
             case "symmetry_equiv":
@@ -951,14 +949,6 @@ public class CifCoreBlock extends DelegatingBlock {
      */
     public Function getFunction() {
         return new Function(this);
-    }
-
-    /**
-     * 
-     * @return CellAngle
-     */
-    public CellAngle getCellAngle() {
-        return new CellAngle(this);
     }
 
     /**

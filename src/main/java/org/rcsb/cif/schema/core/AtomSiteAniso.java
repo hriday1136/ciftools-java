@@ -18,7 +18,7 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
 
     /**
      * These are the standard unitless anisotropic atomic displacement components
-     * which appear in the structure factor term:
+     * which appear in the structure factor term
      * 
      * T = exp{-1 sum~i~ [ sum~j~ (β^ij^ h~i~ h~j~) ] }
      * 
@@ -27,11 +27,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * The unique elements of the real symmetric matrix are entered by row.
      * 
      * The IUCr Commission on Nomenclature recommends against the use
-     * of β for reporting atomic displacement parameters; U is preferred .
+     * of β for reporting atomic displacement parameters; U is preferred.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getBeta11() {
@@ -39,10 +39,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the β^ij^ anisotropic atomic displacement components (see
-     * aniso_betaIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the β^ij^ calculation.
+     * aniso_betaIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * β^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getBeta11Su() {
@@ -51,7 +52,7 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
 
     /**
      * These are the standard unitless anisotropic atomic displacement components
-     * which appear in the structure factor term:
+     * which appear in the structure factor term
      * 
      * T = exp{-1 sum~i~ [ sum~j~ (β^ij^ h~i~ h~j~) ] }
      * 
@@ -60,11 +61,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * The unique elements of the real symmetric matrix are entered by row.
      * 
      * The IUCr Commission on Nomenclature recommends against the use
-     * of β for reporting atomic displacement parameters; U is preferred .
+     * of β for reporting atomic displacement parameters; U is preferred.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getBeta12() {
@@ -72,10 +73,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the β^ij^ anisotropic atomic displacement components (see
-     * aniso_betaIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the β^ij^ calculation.
+     * aniso_betaIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * β^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getBeta12Su() {
@@ -84,7 +86,7 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
 
     /**
      * These are the standard unitless anisotropic atomic displacement components
-     * which appear in the structure factor term:
+     * which appear in the structure factor term
      * 
      * T = exp{-1 sum~i~ [ sum~j~ (β^ij^ h~i~ h~j~) ] }
      * 
@@ -93,11 +95,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * The unique elements of the real symmetric matrix are entered by row.
      * 
      * The IUCr Commission on Nomenclature recommends against the use
-     * of β for reporting atomic displacement parameters; U is preferred .
+     * of β for reporting atomic displacement parameters; U is preferred.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getBeta13() {
@@ -105,10 +107,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the β^ij^ anisotropic atomic displacement components (see
-     * aniso_betaIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the β^ij^ calculation.
+     * aniso_betaIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * β^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getBeta13Su() {
@@ -117,7 +120,7 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
 
     /**
      * These are the standard unitless anisotropic atomic displacement components
-     * which appear in the structure factor term:
+     * which appear in the structure factor term
      * 
      * T = exp{-1 sum~i~ [ sum~j~ (β^ij^ h~i~ h~j~) ] }
      * 
@@ -126,11 +129,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * The unique elements of the real symmetric matrix are entered by row.
      * 
      * The IUCr Commission on Nomenclature recommends against the use
-     * of β for reporting atomic displacement parameters; U is preferred .
+     * of β for reporting atomic displacement parameters; U is preferred.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getBeta22() {
@@ -138,10 +141,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the β^ij^ anisotropic atomic displacement components (see
-     * aniso_betaIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the β^ij^ calculation.
+     * aniso_betaIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * β^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getBeta22Su() {
@@ -150,7 +154,7 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
 
     /**
      * These are the standard unitless anisotropic atomic displacement components
-     * which appear in the structure factor term:
+     * which appear in the structure factor term
      * 
      * T = exp{-1 sum~i~ [ sum~j~ (β^ij^ h~i~ h~j~) ] }
      * 
@@ -159,11 +163,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * The unique elements of the real symmetric matrix are entered by row.
      * 
      * The IUCr Commission on Nomenclature recommends against the use
-     * of β for reporting atomic displacement parameters; U is preferred .
+     * of β for reporting atomic displacement parameters; U is preferred.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getBeta23() {
@@ -171,10 +175,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the β^ij^ anisotropic atomic displacement components (see
-     * aniso_betaIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the β^ij^ calculation.
+     * aniso_betaIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * β^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getBeta23Su() {
@@ -183,7 +188,7 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
 
     /**
      * These are the standard unitless anisotropic atomic displacement components
-     * which appear in the structure factor term:
+     * which appear in the structure factor term
      * 
      * T = exp{-1 sum~i~ [ sum~j~ (β^ij^ h~i~ h~j~) ] }
      * 
@@ -192,11 +197,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * The unique elements of the real symmetric matrix are entered by row.
      * 
      * The IUCr Commission on Nomenclature recommends against the use
-     * of β for reporting atomic displacement parameters; U is preferred .
+     * of β for reporting atomic displacement parameters; U is preferred.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getBeta33() {
@@ -204,10 +209,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the β^ij^ anisotropic atomic displacement components (see
-     * aniso_betaIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the β^ij^ calculation.
+     * aniso_betaIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * β^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getBeta33Su() {
@@ -258,7 +264,7 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
 
     /**
      * These are the standard anisotropic atomic displacement components, in
-     * angstroms squared, which appear in the structure factor term:
+     * angstroms squared, which appear in the structure-factor term
      * 
      * T = exp{-1/4 sum~i~ [ sum~j~ (B^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
      * 
@@ -269,11 +275,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * 
      * The IUCr Commission on Nomenclature recommends against the use of B for
      * reporting atomic displacement parameters. U, being directly proportional
-     * to B, is preferred .
+     * to B, is preferred.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getB11() {
@@ -281,10 +287,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the B^ij^ anisotropic atomic displacement components (see
-     * aniso_BIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the B^ij^ calculation.
+     * aniso_BIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * B^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getB11Esd() {
@@ -292,10 +299,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the B^ij^ anisotropic atomic displacement components (see
-     * aniso_BIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the B^ij^ calculation.
+     * aniso_BIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * B^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getB11Su() {
@@ -304,7 +312,7 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
 
     /**
      * These are the standard anisotropic atomic displacement components, in
-     * angstroms squared, which appear in the structure factor term:
+     * angstroms squared, which appear in the structure-factor term
      * 
      * T = exp{-1/4 sum~i~ [ sum~j~ (B^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
      * 
@@ -315,11 +323,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * 
      * The IUCr Commission on Nomenclature recommends against the use of B for
      * reporting atomic displacement parameters. U, being directly proportional
-     * to B, is preferred .
+     * to B, is preferred.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getB12() {
@@ -327,10 +335,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the B^ij^ anisotropic atomic displacement components (see
-     * aniso_BIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the B^ij^ calculation.
+     * aniso_BIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * B^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getB12Esd() {
@@ -338,10 +347,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the B^ij^ anisotropic atomic displacement components (see
-     * aniso_BIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the B^ij^ calculation.
+     * aniso_BIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * B^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getB12Su() {
@@ -350,7 +360,7 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
 
     /**
      * These are the standard anisotropic atomic displacement components, in
-     * angstroms squared, which appear in the structure factor term:
+     * angstroms squared, which appear in the structure-factor term
      * 
      * T = exp{-1/4 sum~i~ [ sum~j~ (B^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
      * 
@@ -361,11 +371,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * 
      * The IUCr Commission on Nomenclature recommends against the use of B for
      * reporting atomic displacement parameters. U, being directly proportional
-     * to B, is preferred .
+     * to B, is preferred.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getB13() {
@@ -373,10 +383,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the B^ij^ anisotropic atomic displacement components (see
-     * aniso_BIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the B^ij^ calculation.
+     * aniso_BIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * B^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getB13Esd() {
@@ -384,10 +395,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the B^ij^ anisotropic atomic displacement components (see
-     * aniso_BIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the B^ij^ calculation.
+     * aniso_BIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * B^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getB13Su() {
@@ -396,7 +408,7 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
 
     /**
      * These are the standard anisotropic atomic displacement components, in
-     * angstroms squared, which appear in the structure factor term:
+     * angstroms squared, which appear in the structure-factor term
      * 
      * T = exp{-1/4 sum~i~ [ sum~j~ (B^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
      * 
@@ -407,11 +419,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * 
      * The IUCr Commission on Nomenclature recommends against the use of B for
      * reporting atomic displacement parameters. U, being directly proportional
-     * to B, is preferred .
+     * to B, is preferred.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getB22() {
@@ -419,10 +431,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the B^ij^ anisotropic atomic displacement components (see
-     * aniso_BIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the B^ij^ calculation.
+     * aniso_BIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * B^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getB22Esd() {
@@ -430,10 +443,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the B^ij^ anisotropic atomic displacement components (see
-     * aniso_BIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the B^ij^ calculation.
+     * aniso_BIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * B^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getB22Su() {
@@ -442,7 +456,7 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
 
     /**
      * These are the standard anisotropic atomic displacement components, in
-     * angstroms squared, which appear in the structure factor term:
+     * angstroms squared, which appear in the structure-factor term
      * 
      * T = exp{-1/4 sum~i~ [ sum~j~ (B^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
      * 
@@ -453,11 +467,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * 
      * The IUCr Commission on Nomenclature recommends against the use of B for
      * reporting atomic displacement parameters. U, being directly proportional
-     * to B, is preferred .
+     * to B, is preferred.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getB23() {
@@ -465,10 +479,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the B^ij^ anisotropic atomic displacement components (see
-     * aniso_BIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the B^ij^ calculation.
+     * aniso_BIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * B^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getB23Esd() {
@@ -476,10 +491,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the B^ij^ anisotropic atomic displacement components (see
-     * aniso_BIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the B^ij^ calculation.
+     * aniso_BIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * B^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getB23Su() {
@@ -488,7 +504,7 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
 
     /**
      * These are the standard anisotropic atomic displacement components, in
-     * angstroms squared, which appear in the structure factor term:
+     * angstroms squared, which appear in the structure-factor term
      * 
      * T = exp{-1/4 sum~i~ [ sum~j~ (B^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
      * 
@@ -499,11 +515,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * 
      * The IUCr Commission on Nomenclature recommends against the use of B for
      * reporting atomic displacement parameters. U, being directly proportional
-     * to B, is preferred .
+     * to B, is preferred.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getB33() {
@@ -511,10 +527,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the B^ij^ anisotropic atomic displacement components (see
-     * aniso_BIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the B^ij^ calculation.
+     * aniso_BIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * B^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getB33Esd() {
@@ -522,10 +539,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the B^ij^ anisotropic atomic displacement components (see
-     * aniso_BIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the B^ij^ calculation.
+     * aniso_BIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * B^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getB33Su() {
@@ -556,23 +574,23 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
 
     /**
      * The symmetric anisotropic atomic displacement parameter (ADP) matrix, β,
-     * which appears in a structure factor expression.
+     * which appears in a structure-factor expression.
      * 
      * The contribution of the ADPs to the calculation of the structure factor is
-     * given as:
+     * given as
      * 
-     * T = exp(-1 * Sum(Sum(β^ij^ * h~i~ * h~j~, j=1:3), i=1:3))
+     * T = exp{-1 * Sum[Sum(β^ij^ * h~i~ * h~j~, j=1:3), i=1:3]}
      * 
-     * where β^ij^ are the matrix elements, and h~m~ are the Miller indices.
+     * where β^ij^ are the matrix elements and h~m~ are the Miller indices.
      * 
-     * The ADP matrix β, is related to the ADP matrices U and B, as follows:
+     * The ADP matrix β is related to the ADP matrices U and B as follows:
      * 
      * |a~1~*   0     0  |   |t^11^ t^12^ t^13^|   |a~1~*   0     0  |
      * β = C * |  0   a~2~*   0  | * |t^12^ t^22^ t^23^| * |  0   a~2~*   0  |
      * |  0     0   a~3~*|   |t^13^ t^23^ t^33^|   |  0     0   a~3~*|
      * 
-     * where C is a constant (2 * π^2^ for U, and 0.25 for B), a~i~* is the
-     * length of the respective reciprocal unit cell vector, and t represents
+     * where C is a constant (2 * π^2^ for U and 0.25 for B), a~i~* is the
+     * length of the respective reciprocal unit-cell vector, and t represents
      * the individual anisotropic values, U^ij^ or B^ij^.
      * @return FloatColumn
      */
@@ -608,8 +626,8 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard anisotropic atomic displacement components, in
-     * angstroms squared, which appear in the structure factor term:
+     * These are the standard anisotropic atomic displacement components in
+     * angstroms squared which appear in the structure-factor term
      * 
      * T = exp{ -2π^2^ sum~i~ [ sum~j~ (U^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
      * 
@@ -619,11 +637,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * The unique elements of the real symmetric matrix are entered by row.
      * 
      * The IUCr Commission on Nomenclature recommends the use of U for reporting
-     * atomic displacement parameters .
+     * atomic displacement parameters.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getU11() {
@@ -631,10 +649,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the U^ij^ anisotropic atomic displacement components (see
-     * aniso_UIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the U^ij^ calculation.
+     * aniso_UIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * U^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getU11Esd() {
@@ -642,10 +661,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the U^ij^ anisotropic atomic displacement components (see
-     * aniso_UIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the U^ij^ calculation.
+     * aniso_UIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * U^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getU11Su() {
@@ -653,8 +673,8 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard anisotropic atomic displacement components, in
-     * angstroms squared, which appear in the structure factor term:
+     * These are the standard anisotropic atomic displacement components in
+     * angstroms squared which appear in the structure-factor term
      * 
      * T = exp{ -2π^2^ sum~i~ [ sum~j~ (U^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
      * 
@@ -664,11 +684,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * The unique elements of the real symmetric matrix are entered by row.
      * 
      * The IUCr Commission on Nomenclature recommends the use of U for reporting
-     * atomic displacement parameters .
+     * atomic displacement parameters.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getU12() {
@@ -676,10 +696,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the U^ij^ anisotropic atomic displacement components (see
-     * aniso_UIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the U^ij^ calculation.
+     * aniso_UIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * U^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getU12Esd() {
@@ -687,10 +708,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the U^ij^ anisotropic atomic displacement components (see
-     * aniso_UIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the U^ij^ calculation.
+     * aniso_UIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * U^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getU12Su() {
@@ -698,8 +720,8 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard anisotropic atomic displacement components, in
-     * angstroms squared, which appear in the structure factor term:
+     * These are the standard anisotropic atomic displacement components in
+     * angstroms squared which appear in the structure-factor term
      * 
      * T = exp{ -2π^2^ sum~i~ [ sum~j~ (U^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
      * 
@@ -709,11 +731,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * The unique elements of the real symmetric matrix are entered by row.
      * 
      * The IUCr Commission on Nomenclature recommends the use of U for reporting
-     * atomic displacement parameters .
+     * atomic displacement parameters.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getU13() {
@@ -721,10 +743,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the U^ij^ anisotropic atomic displacement components (see
-     * aniso_UIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the U^ij^ calculation.
+     * aniso_UIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * U^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getU13Esd() {
@@ -732,10 +755,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the U^ij^ anisotropic atomic displacement components (see
-     * aniso_UIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the U^ij^ calculation.
+     * aniso_UIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * U^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getU13Su() {
@@ -743,8 +767,8 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard anisotropic atomic displacement components, in
-     * angstroms squared, which appear in the structure factor term:
+     * These are the standard anisotropic atomic displacement components in
+     * angstroms squared which appear in the structure-factor term
      * 
      * T = exp{ -2π^2^ sum~i~ [ sum~j~ (U^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
      * 
@@ -754,11 +778,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * The unique elements of the real symmetric matrix are entered by row.
      * 
      * The IUCr Commission on Nomenclature recommends the use of U for reporting
-     * atomic displacement parameters .
+     * atomic displacement parameters.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getU22() {
@@ -766,10 +790,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the U^ij^ anisotropic atomic displacement components (see
-     * aniso_UIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the U^ij^ calculation.
+     * aniso_UIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * U^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getU22Esd() {
@@ -777,10 +802,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the U^ij^ anisotropic atomic displacement components (see
-     * aniso_UIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the U^ij^ calculation.
+     * aniso_UIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * U^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getU22Su() {
@@ -788,8 +814,8 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard anisotropic atomic displacement components, in
-     * angstroms squared, which appear in the structure factor term:
+     * These are the standard anisotropic atomic displacement components in
+     * angstroms squared which appear in the structure-factor term
      * 
      * T = exp{ -2π^2^ sum~i~ [ sum~j~ (U^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
      * 
@@ -799,11 +825,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * The unique elements of the real symmetric matrix are entered by row.
      * 
      * The IUCr Commission on Nomenclature recommends the use of U for reporting
-     * atomic displacement parameters .
+     * atomic displacement parameters.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getU23() {
@@ -811,10 +837,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the U^ij^ anisotropic atomic displacement components (see
-     * aniso_UIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the U^ij^ calculation.
+     * aniso_UIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * U^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getU23Esd() {
@@ -822,10 +849,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the U^ij^ anisotropic atomic displacement components (see
-     * aniso_UIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the U^ij^ calculation.
+     * aniso_UIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * U^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getU23Su() {
@@ -833,8 +861,8 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard anisotropic atomic displacement components, in
-     * angstroms squared, which appear in the structure factor term:
+     * These are the standard anisotropic atomic displacement components in
+     * angstroms squared which appear in the structure-factor term
      * 
      * T = exp{ -2π^2^ sum~i~ [ sum~j~ (U^ij^ h~i~ h~j~ a*~i~ a*~j~) ] }
      * 
@@ -844,11 +872,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
      * The unique elements of the real symmetric matrix are entered by row.
      * 
      * The IUCr Commission on Nomenclature recommends the use of U for reporting
-     * atomic displacement parameters .
+     * atomic displacement parameters.
      * 
-     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^) .
+     * Note that U^ij^ = β^ij^/(2 π^2^ a*~i~ a*~j~) = B^ij^/(8 π^2^).
      * 
-     *  Trueblood, K. N. et al. (1996). Acta Crystallogr. A52(5), 770-781.
+     * Ref: Trueblood, K. N. et al. (1996). Acta Cryst. A52, 770-781.
      * @return FloatColumn
      */
     public FloatColumn getU33() {
@@ -856,10 +884,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the U^ij^ anisotropic atomic displacement components (see
-     * aniso_UIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the U^ij^ calculation.
+     * aniso_UIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * U^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getU33Esd() {
@@ -867,10 +896,11 @@ public class AtomSiteAniso extends DelegatingCategory.DelegatingCifCoreCategory 
     }
 
     /**
-     * These are the standard uncertainty values (SU) for the standard
+     * These are the standard uncertainty values (s.u.) for the standard
      * form of the U^ij^ anisotropic atomic displacement components (see
-     * aniso_UIJ). Because these values are TYPE measurand, the su values
-     * may in practice be auto generated as part of the U^ij^ calculation.
+     * aniso_UIJ). Because these values are _type.purpose Measurand, the
+     * s.u. values may in practice be auto generated as part of the
+     * U^ij^ calculation.
      * @return FloatColumn
      */
     public FloatColumn getU33Su() {

@@ -51,7 +51,8 @@ public class GeomAngle extends DelegatingCategory.DelegatingCifCoreCategory {
 
     /**
      * Data item specifying the symmetry operation codes applied to the atom
-     * sites involved in a specific geometric configuration.
+     * sites involved in a specific geometric configuration or other correlated
+     * behaviour.
      * 
      * The symmetry code of each atom site as the symmetry-equivalent position
      * number 'n' and the cell translation number 'pqr'. These numbers are
@@ -66,8 +67,8 @@ public class GeomAngle extends DelegatingCategory.DelegatingCifCoreCategory {
      * 
      * p, q and r refer to the translations that are subsequently
      * applied to the symmetry transformed coordinates to generate
-     * the atom used in calculating the angle. These translations
-     * (x,y,z) are related to (p,q,r) by the relations
+     * the related atom position. These translations (x,y,z) are related
+     * to (p,q,r) by the relations
      * p = 5 + x
      * q = 5 + y
      * r = 5 + z
@@ -79,7 +80,8 @@ public class GeomAngle extends DelegatingCategory.DelegatingCifCoreCategory {
 
     /**
      * Data item specifying the symmetry operation codes applied to the atom
-     * sites involved in a specific geometric configuration.
+     * sites involved in a specific geometric configuration or other correlated
+     * behaviour.
      * 
      * The symmetry code of each atom site as the symmetry-equivalent position
      * number 'n' and the cell translation number 'pqr'. These numbers are
@@ -94,8 +96,8 @@ public class GeomAngle extends DelegatingCategory.DelegatingCifCoreCategory {
      * 
      * p, q and r refer to the translations that are subsequently
      * applied to the symmetry transformed coordinates to generate
-     * the atom used in calculating the angle. These translations
-     * (x,y,z) are related to (p,q,r) by the relations
+     * the related atom position. These translations (x,y,z) are related
+     * to (p,q,r) by the relations
      * p = 5 + x
      * q = 5 + y
      * r = 5 + z
@@ -107,7 +109,8 @@ public class GeomAngle extends DelegatingCategory.DelegatingCifCoreCategory {
 
     /**
      * Data item specifying the symmetry operation codes applied to the atom
-     * sites involved in a specific geometric configuration.
+     * sites involved in a specific geometric configuration or other correlated
+     * behaviour.
      * 
      * The symmetry code of each atom site as the symmetry-equivalent position
      * number 'n' and the cell translation number 'pqr'. These numbers are
@@ -122,8 +125,8 @@ public class GeomAngle extends DelegatingCategory.DelegatingCifCoreCategory {
      * 
      * p, q and r refer to the translations that are subsequently
      * applied to the symmetry transformed coordinates to generate
-     * the atom used in calculating the angle. These translations
-     * (x,y,z) are related to (p,q,r) by the relations
+     * the related atom position. These translations (x,y,z) are related
+     * to (p,q,r) by the relations
      * p = 5 + x
      * q = 5 + y
      * r = 5 + z

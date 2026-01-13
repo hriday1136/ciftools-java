@@ -26,9 +26,10 @@ public class SpaceGroup extends DelegatingCategory.DelegatingCifCoreCategory {
      * setting-independent symbol oS replaces the setting-dependent
      * symbols oA, oB and oC.
      * 
-     * Ref: International Tables for Crystallography (2002). Volume A,
-     * Space-group symmetry, edited by Th. Hahn, 5th ed., p. 15.
-     * Dordrecht: Kluwer Academic Publishers.
+     * Ref: International Tables for Crystallography (2016). Volume A,
+     * Space-group symmetry, edited by M. I. Aroyo, 6th ed.,
+     * Tables 1.3.4.1 and 2.1.1.1.
+     * Chichester: John Wiley &amp; Sons.
      * @return StrColumn
      */
     public StrColumn getBravaisType() {
@@ -58,14 +59,14 @@ public class SpaceGroup extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * A qualifier taken from the enumeration list identifying which
      * setting in International Tables for Crystallography Volume A
-     * (2002) (IT) is used.  See IT Table 4.3.2.1, Section 2.2.16,
-     * Table 2.2.16.1, Section 2.2.16.1 and Fig. 2.2.6.4.  This item
-     * is not computer-interpretable and cannot be used to define the
+     * (2016) (IT) is used.  See IT Table 1.5.4.4, Section 2.1.3.15,
+     * Table 2.1.3.11 and Fig. 2.1.3.4.  This item is not
+     * computer-interpretable and cannot be used to define the
      * coordinate system.
      * 
-     * Ref: International Tables for Crystallography (2002). Volume A,
-     * Space-group symmetry, edited by Th. Hahn, 5th ed.
-     * Dordrecht: Kluwer Academic Publishers.
+     * Ref: International Tables for Crystallography (2016). Volume A,
+     * Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+     * Chichester: John Wiley &amp; Sons.
      * @return StrColumn
      */
     public StrColumn getItCoordinateSystemCode() {
@@ -131,9 +132,9 @@ public class SpaceGroup extends DelegatingCategory.DelegatingCifCoreCategory {
 
     /**
      * The short international Hermann-Mauguin space-group symbol as
-     * defined in Section 2.2.3 and given as the first item of each
-     * space-group table in Part 7 of International Tables
-     * for Crystallography Volume A (2002).
+     * defined in Section 2.1.3.3 and given as the first item of each
+     * space-group table in Chapter 2.3 of International Tables
+     * for Crystallography Volume A (2016).
      * 
      * Each component of the space-group name is separated by a
      * space character. Subscripts appear without special symbols.
@@ -155,9 +156,9 @@ public class SpaceGroup extends DelegatingCategory.DelegatingCifCoreCategory {
      * In the enumeration list, each possible value is identified by
      * space-group number and Schoenflies symbol.
      * 
-     * Ref: International Tables for Crystallography (2002). Volume A,
-     * Space-group symmetry, edited by Th. Hahn, 5th ed.
-     * Dordrecht: Kluwer Academic Publishers.
+     * Ref: International Tables for Crystallography (2016). Volume A,
+     * Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+     * Chichester: John Wiley &amp; Sons.
      * @return StrColumn
      */
     public StrColumn getNameH_mRef() {
@@ -175,9 +176,9 @@ public class SpaceGroup extends DelegatingCategory.DelegatingCifCoreCategory {
      * The symbol is given with a period, '.', separating the
      * Schoenflies point group and the superscript.
      * 
-     * Ref: International Tables for Crystallography (2002). Volume A,
-     * Space-group symmetry, edited by Th. Hahn, 5th ed.
-     * Dordrecht: Kluwer Academic Publishers.
+     * Ref: International Tables for Crystallography (2016). Volume A,
+     * Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+     * Chichester: John Wiley &amp; Sons.
      * @return StrColumn
      */
     public StrColumn getNameSchoenflies() {
@@ -187,8 +188,8 @@ public class SpaceGroup extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * The Hermann-Mauguin symbol of the type of that centrosymmetric
      * symmorphic space group to which the Patterson function belongs;
-     * see Table 2.2.5.1 in International Tables for Crystallography
-     * Volume A (2002).
+     * see Table 2.1.3.3 in International Tables for Crystallography
+     * Volume A (2016).
      * 
      * A space separates each symbol referring to different axes.
      * Underscores may replace the spaces, but this use is discouraged.
@@ -196,9 +197,9 @@ public class SpaceGroup extends DelegatingCategory.DelegatingCifCoreCategory {
      * Bars should be given as negative signs before the number
      * to which they apply.
      * 
-     * Ref: International Tables for Crystallography (2002). Volume A,
-     * Space-group symmetry, edited by Th. Hahn, 5th ed.,
-     * Table 2.2.5.1. Dordrecht: Kluwer Academic Publishers.
+     * Ref: International Tables for Crystallography (2016). Volume A,
+     * Space-group symmetry, edited by M. I. Aroyo, 6th ed., Table 2.1.3.3.
+     * Chichester: John Wiley &amp; Sons.
      * @return StrColumn
      */
     public StrColumn getPattersonNameH_m() {
@@ -230,9 +231,9 @@ public class SpaceGroup extends DelegatingCategory.DelegatingCifCoreCategory {
 
     /**
      * The full international Hermann-Mauguin space-group symbol as
-     * defined in Section 2.2.3 and given as the second item of the
-     * second line of each of the space-group tables of Part 7 of
-     * International Tables for Crystallography Volume A (2002).
+     * defined in Section 2.1.3.3 and given as the second item of the
+     * second line of each of the space-group tables of Chapter 2.3 of
+     * International Tables for Crystallography Volume A (2016).
      * 
      * Each component of the space-group name is separated by a
      * space or an underscore character. The use of a space is
@@ -254,9 +255,9 @@ public class SpaceGroup extends DelegatingCategory.DelegatingCifCoreCategory {
      * _space_group.name_Hall, or list the symmetry operations
      * or generators.
      * 
-     * Ref: International Tables for Crystallography (2002). Volume A,
-     * Space-group symmetry, edited by Th. Hahn, 5th ed.
-     * Dordrecht: Kluwer Academic Publishers.
+     * Ref: International Tables for Crystallography (2016). Volume A,
+     * Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+     * Chichester: John Wiley &amp; Sons.
      * @return StrColumn
      */
     public StrColumn getNameH_mFull() {

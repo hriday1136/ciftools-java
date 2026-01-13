@@ -82,6 +82,19 @@ public class Diffrn extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
+     * Flux density of radiation incident at the crystal.
+     * 
+     * Reference: Dickerson, J. L., McCubbin, P. T. N., Brooks-Bartlett,
+     * J. C. &amp; Garman, E. F. (2024). Doses for X-ray and electron
+     * diffraction: New features in RADDOSE-3D including intensity decay
+     * models. Protein Sci. 33, e5005.
+     * @return FloatColumn
+     */
+    public FloatColumn getFluxDensity() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("diffrn_flux_density"));
+    }
+
+    /**
      * Unique identifier for a diffraction data set collected under
      * particular diffraction conditions.
      * @return StrColumn
@@ -109,12 +122,59 @@ public class Diffrn extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
+     * Angle at the sample of the tilt from the normal direction of a radiation
+     * beam moved in a precessional scan.
+     * @return FloatColumn
+     */
+    public FloatColumn getPrecessionSemiAngle() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("diffrn_precession_semi_angle"));
+    }
+
+    /**
+     * Standard uncertainty of _diffrn.precession_semi_angle.
+     * @return FloatColumn
+     */
+    public FloatColumn getPrecessionSemiAngleSu() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("diffrn_precession_semi_angle_su"));
+    }
+
+    /**
      * Recorded diffraction point symmetry, systematic absences and possible
      * space group(s) or superspace group(s) compatible with these.
      * @return StrColumn
      */
     public StrColumn getSymmetryDescription() {
         return new DelegatingStrColumn(parentBlock.getColumn("diffrn_symmetry_description"));
+    }
+
+    /**
+     * Total radiation dose absorbed by the crystal during the diffraction
+     * experiment.
+     * 
+     * Reference: Dickerson, J. L., McCubbin, P. T. N., Brooks-Bartlett,
+     * J. C. &amp; Garman, E. F. (2024). Doses for X-ray and electron
+     * diffraction: New features in RADDOSE-3D including intensity decay
+     * models. Protein Sci. 33, e5005.
+     * @return FloatColumn
+     */
+    public FloatColumn getTotalDose() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("diffrn_total_dose"));
+    }
+
+    /**
+     * Standard uncertainty of _diffrn.total_dose.
+     * @return FloatColumn
+     */
+    public FloatColumn getTotalDoseSu() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("diffrn_total_dose_su"));
+    }
+
+    /**
+     * Total time the crystal was exposed during the diffraction experiment.
+     * @return FloatColumn
+     */
+    public FloatColumn getTotalExposureTime() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("diffrn_total_exposure_time"));
     }
 
     /**

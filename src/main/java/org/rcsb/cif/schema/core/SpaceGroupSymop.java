@@ -26,7 +26,7 @@ public class SpaceGroupSymop extends DelegatingCategory.DelegatingCifCoreCategor
     }
 
     /**
-     * A matrix containing the symmetry rotation operations of a space group
+     * A matrix containing the symmetry rotation operations of a space group.
      * 
      * |  r11  r12  r13  |
      * R  =  |  r21  r22  r23  |
@@ -38,8 +38,8 @@ public class SpaceGroupSymop extends DelegatingCategory.DelegatingCifCoreCategor
     }
 
     /**
-     * The TRANSPOSE of the symmetry rotation matrix representing the point
-     * group operations of the space group
+     * The transpose of the symmetry rotation matrix representing the point
+     * group operations of the space group.
      * 
      * |  r11  r21  r31  |
      * RT  =  |  r12  r22  r32  |
@@ -93,10 +93,10 @@ public class SpaceGroupSymop extends DelegatingCategory.DelegatingCifCoreCategor
      * translations defined by fractions, an equivalent position
      * X' is generated from a given position X by the equation
      * 
-     * X' = WX + w
+     * X' = WX + w.
      * 
      * (Note: X is used to represent bold_italics_x in International
-     * Tables for Crystallography Vol. A, Part 5)
+     * Tables for Crystallography Vol. A, Part 5.)
      * 
      * When a list of symmetry operations is given, it must contain
      * a complete set of coordinate representatives which generates

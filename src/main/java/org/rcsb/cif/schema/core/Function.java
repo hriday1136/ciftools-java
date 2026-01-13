@@ -57,8 +57,8 @@ public class Function extends DelegatingCategory.DelegatingCifCoreCategory {
      * xyz' =  SymEquiv( symop, xyz )
      * 
      * returns a fractional coordinate vector xyz' which is input vector
-     * xyz transformed by the input symop 'n_pqr' applied to the symmetry
-     * equivalent matrix extracted from the category SPACE_GROUP_SYMOP.
+     * xyz transformed by the input symop 'n_pqr' applied to the
+     * symmetry-equivalent matrix extracted from the category SPACE_GROUP_SYMOP.
      * @return FloatColumn
      */
     public FloatColumn getSymequiv() {

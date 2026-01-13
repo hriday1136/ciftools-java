@@ -20,8 +20,8 @@ public class SpaceGroupGenerator extends DelegatingCategory.DelegatingCifCoreCat
      * Arbitrary identifier for each entry in the _space_group_generator.xyz list.
      * @return StrColumn
      */
-    public StrColumn getKey() {
-        return new DelegatingStrColumn(parentBlock.getColumn("space_group_generator_key"));
+    public StrColumn getId() {
+        return new DelegatingStrColumn(parentBlock.getColumn("space_group_generator_id"));
     }
 
     /**
@@ -35,7 +35,7 @@ public class SpaceGroupGenerator extends DelegatingCategory.DelegatingCifCoreCat
      * X' = WX + w.
      * 
      * (Note: X is used to represent the bold italic x in International
-     * Tables for Crystallography Volume A, Section 5.)
+     * Tables for Crystallography Volume A, Chapter 1.5.)
      * 
      * When a list of symmetry generators is given, it is assumed
      * that the complete list of symmetry operations of the space
@@ -48,9 +48,9 @@ public class SpaceGroupGenerator extends DelegatingCategory.DelegatingCifCoreCat
      * W3 = W2 x W1
      * w3 = W2 x w1 + w2.
      * 
-     * Ref: International Tables for Crystallography (2002). Volume A,
-     * Space-group symmetry, edited by Th. Hahn, 5th ed.
-     * Dordrecht: Kluwer Academic Publishers.
+     * Ref: International Tables for Crystallography (2016). Volume A,
+     * Space-group symmetry, edited by M. I. Aroyo, 6th ed.
+     * Chichester: John Wiley &amp; Sons.
      * @return StrColumn
      */
     public StrColumn getXyz() {

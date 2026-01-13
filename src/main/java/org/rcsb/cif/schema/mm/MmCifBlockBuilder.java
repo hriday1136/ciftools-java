@@ -2944,4 +2944,20 @@ public class MmCifBlockBuilder extends BlockBuilderImpl<MmCifFileBuilder> {
         return new MmCifCategoryBuilder.MaChemCompDescriptorBuilder(this);
     }
 
+    public MmCifCategoryBuilder.MaQaMetricDihedralBuilder enterMaQaMetricDihedral() {
+        return new MmCifCategoryBuilder.MaQaMetricDihedralBuilder(this);
+    }
+
+    public MmCifCategoryBuilder.MaEnergyEstimatesBuilder enterMaEnergyEstimates() {
+        return new MmCifCategoryBuilder.MaEnergyEstimatesBuilder(this);
+    }
+
+    public MmCifCategoryBuilder.MaEnergyEstimatesValueBuilder enterMaEnergyEstimatesValue() {
+        return new MmCifCategoryBuilder.MaEnergyEstimatesValueBuilder(this);
+    }
+
+    public MmCifCategoryBuilder.MaExperimentalValidationBuilder enterMaExperimentalValidation() {
+        return new MmCifCategoryBuilder.MaExperimentalValidationBuilder(this);
+    }
+
 }

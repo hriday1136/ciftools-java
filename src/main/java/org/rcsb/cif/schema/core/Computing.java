@@ -41,6 +41,17 @@ public class Computing extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
+     * Reference to software used to track the position of a sample with
+     * respect to the diffraction source beam. Typically used in 3D
+     * electron diffraction. More details of the tracking method may be
+     * provided in _diffrn_measurement.sample_tracking_method.
+     * @return StrColumn
+     */
+    public StrColumn getSampleTracking() {
+        return new DelegatingStrColumn(parentBlock.getColumn("computing_sample_tracking"));
+    }
+
+    /**
      * Brief description of software used for structure refinement.
      * @return StrColumn
      */

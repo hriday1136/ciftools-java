@@ -27,6 +27,18 @@ public class DiffrnSource extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
+     * The angle of convergence of the source beam (for example in
+     * convergent-beam electron diffraction). The convergence angle
+     * is the angular spread of the cone of illumination (i.e. 2α,
+     * where the semi-angle α is measured from the axis defining the
+     * beam direction).
+     * @return FloatColumn
+     */
+    public FloatColumn getConvergenceAngle() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("diffrn_source_convergence_angle"));
+    }
+
+    /**
      * Generator current at which the radiation source device was operated.
      * @return FloatColumn
      */
@@ -49,6 +61,16 @@ public class DiffrnSource extends DelegatingCategory.DelegatingCifCoreCategory {
      */
     public StrColumn getDevice() {
         return new DelegatingStrColumn(parentBlock.getColumn("diffrn_source_device"));
+    }
+
+    /**
+     * Enumerated code for the technique in electron diffraction used to
+     * select the region of the sample from which the diffraction pattern
+     * is obtained.
+     * @return StrColumn
+     */
+    public StrColumn getEdDiffractingAreaSelection() {
+        return new DelegatingStrColumn(parentBlock.getColumn("diffrn_source_ed_diffracting_area_selection"));
     }
 
     /**

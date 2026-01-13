@@ -41,7 +41,7 @@ public class Cell extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * Atomic mass of the contents of the unit cell. This calculated
+     * Atomic mass of the contents of the unit cell. This is calculated
      * from the atom sites present in the ATOM_TYPE list, rather than
      * the ATOM_SITE lists of atoms in the refined model.
      * @return FloatColumn
@@ -51,19 +51,19 @@ public class Cell extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * The reciprocal space matrix for converting the U(ij) matrix of
+     * The reciprocal-space matrix for converting the U(ij) matrix of
      * atomic displacement parameters to a dimensionless beta(IJ) matrix.
-     * The ADP factor in a structure factor expression:
+     * The ADP factor in a structure-factor expression:
      * 
-     * t = exp - 2π^2^ ( U11 h h a* a* + ...... 2 U23 k l b* c* )
-     * t = exp - 0.25  ( B11 h h a* a* + ...... 2 B23 k l b* c* )
-     * = exp -       ( β11 h h + ............ 2 β23 k l )
+     * t = exp [ - 2π^2^ ( U11 h h a* a* + ...... 2 U23 k l b* c* ) ]
+     * t = exp [ - 0.25  ( B11 h h a* a* + ...... 2 B23 k l b* c* ) ]
+     * t = exp [ -       ( β11 h h + ............ 2 β23 k l ) ]
      * 
      * The conversion of the U or B matrices to the β matrix
      * 
      * β =   C U C   =    C B C /8π^2^
      * 
-     * where C is conversion matrix defined here.
+     * where C is the conversion matrix defined here.
      * @return FloatColumn
      */
     public FloatColumn getConvertUijToBetaij() {
@@ -79,11 +79,11 @@ public class Cell extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
-     * The reciprocal space matrix for converting the isotropic Uiso
+     * The reciprocal-space matrix for converting the isotropic Uiso
      * atomic displacement parameter to the anisotropic matrix Uij.
      * 
      * | 1        cos(γ*)  cos(β*) |
-     * U[i,j]  = Uiso * | cos(γ*)  1        cos(α*) |
+     * Uij   =   Uiso * | cos(γ*)  1        cos(α*) |
      * | cos(β*)  cos(α*)  1       |
      * @return FloatColumn
      */
@@ -115,11 +115,30 @@ public class Cell extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * The number of the formula units in the unit cell as specified
      * by _chemical_formula.structural, _chemical_formula.moiety or
-     * _chemical_formula.sum.
-     * @return IntColumn
+     * _chemical_formula.sum. This is normally an integer value, but
+     * in exceptional circumstances (Brock, 2025) may be reported as
+     * non-integral.
+     * 
+     * Reference: Brock, C. P. (2025). Acta Cryst. A81, 405-408.
+     * @return FloatColumn
      */
-    public IntColumn getFormulaUnitsZ() {
-        return new DelegatingIntColumn(parentBlock.getColumn("cell_formula_units_z"));
+    public FloatColumn getFormulaUnitsZ() {
+        return new DelegatingFloatColumn(parentBlock.getColumn("cell_formula_units_z"));
+    }
+
+    /**
+     * The number Z of formula units in the unit cell is expected to
+     * be an integer. In exceptional circumstances with complex chemistry
+     * an author may report a fractional value of Z, as explained by the
+     * IUCr Commission on Crystallographic Nomenclature (Brock, 2025). This
+     * field is used to describe the justification for the value reported in
+     * _cell.formula_units_Z.
+     * 
+     * Reference: Brock, C. P. (2025). Acta Cryst. A81, 405-408.
+     * @return StrColumn
+     */
+    public StrColumn getFormulaUnitsZDetails() {
+        return new DelegatingStrColumn(parentBlock.getColumn("cell_formula_units_z_details"));
     }
 
     /**
@@ -157,8 +176,11 @@ public class Cell extends DelegatingCategory.DelegatingCifCoreCategory {
 
     /**
      * Orthogonal matrix of the crystal unit cell. Definition uses
-     * Rollet's axial assignments with cell vectors a,b,c aligned
+     * Rollett's axial assignments with cell vectors a,b,c aligned
      * with orthogonal axes X,Y,Z so that c||Z and b in plane YZ.
+     * 
+     * Ref: Rollett, J. S. (1965). Computing Methods in Crystallography, p. 22.
+     * Oxford: Pergamon Press.
      * @return FloatColumn
      */
     public FloatColumn getOrthogonalMatrix() {
@@ -240,9 +262,9 @@ public class Cell extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * Orthogonal matrix of the reciprocal space. The matrix may be
      * used to transform the non-orthogonal vector h = (h,k,l) into
-     * the orthogonal indices p = (p,q,r)
+     * the orthogonal indices p = (p,q,r):
      * 
-     * M h = p
+     * M h = p.
      * @return FloatColumn
      */
     public FloatColumn getReciprocalOrthogonalMatrix() {
@@ -381,16 +403,8 @@ public class Cell extends DelegatingCategory.DelegatingCifCoreCategory {
      * Standard uncertainty of the angle between the bounding cell axes.
      * @return FloatColumn
      */
-    public FloatColumn getBetaSu() {
-        return new DelegatingFloatColumn(parentBlock.getAliasedColumn("cell_angle_beta_su", "cell_angle_beta_esd"));
-    }
-
-    /**
-     * Standard uncertainty of the angle between the bounding cell axes.
-     * @return FloatColumn
-     */
     public FloatColumn getAngleBetaEsd() {
-        return new DelegatingFloatColumn(parentBlock.getAliasedColumn("cell_angle_beta_su", "cell_angle_beta_esd"));
+        return new DelegatingFloatColumn(parentBlock.getAliasedColumn("cell_angle_beta_esd", "cell_angle_beta_su"));
     }
 
     /**
@@ -398,15 +412,7 @@ public class Cell extends DelegatingCategory.DelegatingCifCoreCategory {
      * @return FloatColumn
      */
     public FloatColumn getAngleBetaSu() {
-        return new DelegatingFloatColumn(parentBlock.getAliasedColumn("cell_angle_beta_su", "cell_angle_beta_esd"));
-    }
-
-    /**
-     * Standard uncertainty of the angle between the bounding cell axes.
-     * @return FloatColumn
-     */
-    public FloatColumn getGammaSu() {
-        return new DelegatingFloatColumn(parentBlock.getAliasedColumn("cell_angle_gamma_su", "cell_angle_gamma_esd"));
+        return new DelegatingFloatColumn(parentBlock.getAliasedColumn("cell_angle_beta_esd", "cell_angle_beta_su"));
     }
 
     /**
@@ -414,7 +420,7 @@ public class Cell extends DelegatingCategory.DelegatingCifCoreCategory {
      * @return FloatColumn
      */
     public FloatColumn getAngleGammaEsd() {
-        return new DelegatingFloatColumn(parentBlock.getAliasedColumn("cell_angle_gamma_su", "cell_angle_gamma_esd"));
+        return new DelegatingFloatColumn(parentBlock.getAliasedColumn("cell_angle_gamma_esd", "cell_angle_gamma_su"));
     }
 
     /**
@@ -422,7 +428,7 @@ public class Cell extends DelegatingCategory.DelegatingCifCoreCategory {
      * @return FloatColumn
      */
     public FloatColumn getAngleGammaSu() {
-        return new DelegatingFloatColumn(parentBlock.getAliasedColumn("cell_angle_gamma_su", "cell_angle_gamma_esd"));
+        return new DelegatingFloatColumn(parentBlock.getAliasedColumn("cell_angle_gamma_esd", "cell_angle_gamma_su"));
     }
 
     /**

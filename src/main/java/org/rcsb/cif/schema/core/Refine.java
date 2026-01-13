@@ -17,6 +17,31 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
     }
 
     /**
+     * A code describing the approach to the calculation of the
+     * diffracted intensities. In the kinematical approximation,
+     * interactions of diffracted waves with matter are neglected, and
+     * integrated intensities of the Bragg reflections are proportional
+     * to the square of the modulus of the structure factor. In the
+     * dynamical calculation, interactions between diffracted waves are
+     * taken into account, and the proportionality of the intensities and
+     * the structure factors is not preserved.
+     * @return StrColumn
+     */
+    public StrColumn getDiffractionTheory() {
+        return new DelegatingStrColumn(parentBlock.getColumn("refine_diffraction_theory"));
+    }
+
+    /**
+     * Details needed to characterize the approach to the calculation of the
+     * diffracted intensities, such as a description of the parameters that
+     * were refined dynamically.
+     * @return StrColumn
+     */
+    public StrColumn getDiffractionTheoryDetails() {
+        return new DelegatingStrColumn(parentBlock.getColumn("refine_diffraction_theory_details"));
+    }
+
+    /**
      * Details of the refinement not specified by other data items.
      * @return StrColumn
      */
@@ -430,11 +455,10 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(calc) = the calculated coefficients
      * (see _refine_ls.structure_factor_coef)
      * w       = the least-squares reflection weight
-     * [1/(u^2^)]
-     * u       = standard uncertainty
+     * [1/(u^2^), where u = the standard uncertainty]
      * Nref   = the number of reflections used in the refinement
      * Nparam = the number of refined parameters
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getLsGoodnessOfFitAll() {
@@ -455,11 +479,10 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(calc) = the calculated coefficients
      * (see _refine_ls.structure_factor_coef)
      * w       = the least-squares reflection weight
-     * [1/(u^2^)]
-     * u       = standard uncertainty
+     * [1/(u^2^), where u = the standard uncertainty]
      * Nref   = the number of reflections used in the refinement
      * Nparam = the number of refined parameters
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getGoodnessOfFitAll() {
@@ -485,7 +508,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * Least-squares goodness-of-fit parameter S for significantly
      * intense reflections, (i.e. 'observed' reflections with values
-     * greater-than the threshold set in _reflns.threshold_expression),
+     * greater than the threshold set in _reflns.threshold_expression),
      * after the final cycle. Ideally, account should be taken of
      * parameters restrained in the least-squares refinement.
      * 
@@ -498,11 +521,10 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(calc)     = the calculated coefficients
      * (see _refine_ls.structure_factor_coef)
      * w       = the least-squares reflection weight
-     * [1/(u^2^)]
-     * u       = standard uncertainty
+     * [1/(u^2^), where u = the standard uncertainty]
      * Nref   = the number of reflections used in the refinement
      * Nparam = the number of refined parameters
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getLsGoodnessOfFitObs() {
@@ -512,7 +534,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * Least-squares goodness-of-fit parameter S for significantly
      * intense reflections, (i.e. 'observed' reflections with values
-     * greater-than the threshold set in _reflns.threshold_expression),
+     * greater than the threshold set in _reflns.threshold_expression),
      * after the final cycle. Ideally, account should be taken of
      * parameters restrained in the least-squares refinement.
      * 
@@ -525,11 +547,10 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(calc)     = the calculated coefficients
      * (see _refine_ls.structure_factor_coef)
      * w       = the least-squares reflection weight
-     * [1/(u^2^)]
-     * u       = standard uncertainty
+     * [1/(u^2^), where u = the standard uncertainty]
      * Nref   = the number of reflections used in the refinement
      * Nparam = the number of refined parameters
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getLsGoodnessOfFitGt() {
@@ -539,7 +560,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
     /**
      * Least-squares goodness-of-fit parameter S for significantly
      * intense reflections, (i.e. 'observed' reflections with values
-     * greater-than the threshold set in _reflns.threshold_expression),
+     * greater than the threshold set in _reflns.threshold_expression),
      * after the final cycle. Ideally, account should be taken of
      * parameters restrained in the least-squares refinement.
      * 
@@ -552,11 +573,10 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(calc)     = the calculated coefficients
      * (see _refine_ls.structure_factor_coef)
      * w       = the least-squares reflection weight
-     * [1/(u^2^)]
-     * u       = standard uncertainty
+     * [1/(u^2^), where u = the standard uncertainty]
      * Nref   = the number of reflections used in the refinement
      * Nparam = the number of refined parameters
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getGoodnessOfFitGt() {
@@ -601,11 +621,10 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(calc) = the calculated coefficients
      * (see _refine_ls.structure_factor_coef)
      * w       = the least-squares reflection weight
-     * [1/(u^2^)]
-     * u       = standard uncertainty
+     * [1/(u^2^), where u = the standard uncertainty]
      * Nref   = the number of reflections used in the refinement
      * Nparam = the number of refined parameters
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getLsGoodnessOfFitRef() {
@@ -626,11 +645,10 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(calc) = the calculated coefficients
      * (see _refine_ls.structure_factor_coef)
      * w       = the least-squares reflection weight
-     * [1/(u^2^)]
-     * u       = standard uncertainty
+     * [1/(u^2^), where u = the standard uncertainty]
      * Nref   = the number of reflections used in the refinement
      * Nparam = the number of refined parameters
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getGoodnessOfFitRef() {
@@ -794,7 +812,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * 
      * F(meas) = the measured structure-factor amplitudes
      * F(calc) = the calculated structure-factor amplitudes
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getLsRFactorAll() {
@@ -812,7 +830,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * 
      * F(meas) = the measured structure-factor amplitudes
      * F(calc) = the calculated structure-factor amplitudes
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getRFactorAll() {
@@ -832,7 +850,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * 
      * F(meas_gt) = the 'observed' structure-factor amplitudes
      * F(calc)    = the calculated structure-factor amplitudes
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getLsRFactorObs() {
@@ -852,7 +870,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * 
      * F(meas_gt) = the 'observed' structure-factor amplitudes
      * F(calc)    = the calculated structure-factor amplitudes
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getLsRFactorGt() {
@@ -872,7 +890,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * 
      * F(meas_gt) = the 'observed' structure-factor amplitudes
      * F(calc)    = the calculated structure-factor amplitudes
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getRFactorGt() {
@@ -891,8 +909,10 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * sum F(meas_gt)^2^
      * 
      * F(meas_gt)^2^ = squares of the 'observed' structure-factor
+     * amplitudes
      * F(calc)^2^    = squares of the calculated structure-factor
-     * and the sum is taken over the specified reflections
+     * amplitudes
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getLsRFsqdFactorObs() {
@@ -911,8 +931,10 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * sum F(meas_gt)^2^
      * 
      * F(meas_gt)^2^ = squares of the 'observed' structure-factor
+     * amplitudes
      * F(calc)^2^    = squares of the calculated structure-factor
-     * and the sum is taken over the specified reflections
+     * amplitudes
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getRFsqdFactor() {
@@ -931,7 +953,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * 
      * I(meas_gt) = the net 'observed' intensities
      * I(calc)    = the net calculated intensities
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getLsRIFactorObs() {
@@ -950,7 +972,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * 
      * I(meas_gt) = the net 'observed' intensities
      * I(calc)    = the net calculated intensities
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getRIFactor() {
@@ -986,7 +1008,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * (see _refine_ls.number_parameters)
      * 
      * sum     is taken over the specified reflections
-     * sum~r~  is taken over the restraints
+     * sum~r~  is taken over the restraints.
      * @return FloatColumn
      */
     public FloatColumn getLsRestrainedSAll() {
@@ -1022,7 +1044,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * (see _refine_ls.number_parameters)
      * 
      * sum     is taken over the specified reflections
-     * sum~r~  is taken over the restraints
+     * sum~r~  is taken over the restraints.
      * @return FloatColumn
      */
     public FloatColumn getRestrainedSAll() {
@@ -1058,7 +1080,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * (see _refine_ls.number_parameters)
      * 
      * sum     is taken over the specified reflections
-     * sum~r~  is taken over the restraints
+     * sum~r~  is taken over the restraints.
      * @return FloatColumn
      */
     public FloatColumn getLsRestrainedSObs() {
@@ -1094,7 +1116,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * (see _refine_ls.number_parameters)
      * 
      * sum     is taken over the specified reflections
-     * sum~r~  is taken over the restraints
+     * sum~r~  is taken over the restraints.
      * @return FloatColumn
      */
     public FloatColumn getRestrainedSGt() {
@@ -1271,7 +1293,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(meas) = the measured   amplitude _refine_ls.structure_factor_coef
      * Y(calc) = the calculated amplitude _refine_ls.structure_factor_coef
      * w       = the least-squares weight
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getLsWRFactorAll() {
@@ -1290,7 +1312,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(meas) = the measured   amplitude _refine_ls.structure_factor_coef
      * Y(calc) = the calculated amplitude _refine_ls.structure_factor_coef
      * w       = the least-squares weight
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getWrFactorAll() {
@@ -1310,7 +1332,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(meas_gt) = the 'observed' amplitude _refine_ls.structure_factor_coef
      * Y(calc)    = the calculated amplitude _refine_ls.structure_factor_coef
      * w        = the least-squares weight
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getLsWRFactorObs() {
@@ -1330,7 +1352,7 @@ public class Refine extends DelegatingCategory.DelegatingCifCoreCategory {
      * Y(meas_gt) = the 'observed' amplitude _refine_ls.structure_factor_coef
      * Y(calc)    = the calculated amplitude _refine_ls.structure_factor_coef
      * w        = the least-squares weight
-     * and the sum is taken over the specified reflections
+     * and the sum is taken over the specified reflections.
      * @return FloatColumn
      */
     public FloatColumn getWrFactorGt() {

@@ -60,6 +60,8 @@ public class Software extends DelegatingCategory {
                 return getType();
             case "version":
                 return getVersion();
+            case "pdbx_reference_DOI":
+                return getPdbxReferenceDOI();
             case "pdbx_ordinal":
                 return getPdbxOrdinal();
             default:
@@ -220,6 +222,15 @@ public class Software extends DelegatingCategory {
      */
     public StrColumn getVersion() {
         return delegate.getColumn("version", DelegatingStrColumn::new);
+    }
+
+    /**
+     * Document Object Identifier used by doi.org to uniquely
+     * identify software being used.
+     * @return StrColumn
+     */
+    public StrColumn getPdbxReferenceDOI() {
+        return delegate.getColumn("pdbx_reference_DOI", DelegatingStrColumn::new);
     }
 
     /**
