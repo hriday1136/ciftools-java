@@ -29,7 +29,7 @@ public interface FloatColumn extends Column<double[]> {
      * @return a double
      */
     static double parseFloat(String text) {
-        if (text.isEmpty() || ".".equals(text) || "?".equals(text)) {
+        if (text.isEmpty() || ValueKind.CIF_NOT_PRESENT.equals(text) || ValueKind.CIF_UNKNOWN.equals(text)) {
             return 0;
         }
         // some formats specify uncertain decimal places like: 0.00012(3) - ignore them (in agreement with Mol*)
