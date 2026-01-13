@@ -2,16 +2,7 @@ package org.rcsb.cif;
 
 import org.junit.jupiter.api.Test;
 import org.rcsb.cif.binary.codec.MessagePackCodec;
-import org.rcsb.cif.model.BlockBuilder;
-import org.rcsb.cif.model.Category;
-import org.rcsb.cif.model.CategoryBuilder;
-import org.rcsb.cif.model.CifFile;
-import org.rcsb.cif.model.CifFileBuilder;
-import org.rcsb.cif.model.Column;
-import org.rcsb.cif.model.FloatColumn;
-import org.rcsb.cif.model.FloatColumnBuilder;
-import org.rcsb.cif.model.IntColumn;
-import org.rcsb.cif.model.IntColumnBuilder;
+import org.rcsb.cif.model.*;
 import org.rcsb.cif.model.builder.CategoryBuilderImpl;
 import org.rcsb.cif.model.builder.FloatColumnBuilderImpl;
 import org.rcsb.cif.model.text.TextCategory;
@@ -26,11 +17,9 @@ import org.rcsb.cif.schema.mm.PdbxStructModResidue;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.rcsb.cif.TestHelper.TEST_CASES;
@@ -271,5 +260,44 @@ class WriterTest {
         assertFalse(CifIO.readFromInputStream(new ByteArrayInputStream(text)).as(StandardSchemata.MMCIF).getFirstBlock().getPdbxStructModResidue().isDefined());
         byte[] binary = CifIO.writeBinary(cifFile);
         assertFalse(CifIO.readFromInputStream(new ByteArrayInputStream(binary)).as(StandardSchemata.MMCIF).getFirstBlock().getPdbxStructModResidue().isDefined());
+    }
+
+    @Test
+    void whenWritingValuesThatRequireMask_thenRoundTrip() throws IOException {
+        List<String> vals = new ArrayList<>();
+        vals.add(""); // crucial for original bug that this starts with an ambiguous value
+        vals.add(null);
+        vals.add(".");
+        vals.add("?");
+        vals.add("");
+
+        MmCifFile mmCifFile = CifBuilder.enterFile(StandardSchemata.MMCIF)
+                .enterBlock("?")
+                .enterAtomSite()
+                .enterLabelAltId()
+                .add(vals.toArray(String[]::new))
+                .add("A")
+                .add("B")
+                .add("")
+                .addNullable(vals)
+                .add(".")
+                .add("?")
+                .markNextNotPresent()
+                .markNextUnknown()
+                .add("A")
+                .add("B")
+                .leaveColumn()
+                .leaveCategory()
+                .leaveBlock()
+                .leaveFile();
+
+        byte[] back = CifIO.writeBinary(mmCifFile);
+        StrColumn lai = CifIO.readFromInputStream(new ByteArrayInputStream(back))
+                .as(StandardSchemata.MMCIF)
+                .getFirstBlock()
+                .getAtomSite()
+                .getLabelAltId();
+        int rc = lai.getRowCount();
+        assertEquals(19, rc);
     }
 }
