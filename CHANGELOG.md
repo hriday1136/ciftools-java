@@ -3,7 +3,7 @@ CIFTools Changelog
 
 This project uses semantic versioning. Furthermore, this project provides code that was generated from schemata. Any schema change that introduces a breaking change in the generated code is considered as breaking for the whole project. Additional information is provided below when this occurs (named `Breaking schema changes`). Most of these occur in experimental categories and are unlikely to affect your code. `Breaking API changes` will be avoided starting with version 1.0.0.
 
-[Unreleased]
+ciftools-java 8.0.0 - January 2026
 -------------
 ### Breaking schema changes
 * cif-core:
@@ -13,7 +13,7 @@ This project uses semantic versioning. Furthermore, this project provides code t
   * `diffrn_radiation_wavelength_id` removed
   * `geom_bond_distance_min` renamed to `geom_min_bond_distance_cutoff`
 
-### General
+### New features
 * improved builder ergonomics
   * added overloads that make it easier to build columns with missing values
   * validate that all columns in a category are equal in size
