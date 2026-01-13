@@ -1,4 +1,4 @@
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.rcsb/ciftools-java/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.rcsb/ciftools-java)
+[![Maven Central](https://img.shields.io/maven-central/v/org.rcsb/ciftools-java)](https://central.sonatype.com/artifact/org.rcsb/ciftools-java)
 [![Changelog](https://img.shields.io/badge/changelog--lightgrey.svg?style=flat)](https://github.com/rcsb/ciftools-java/blob/master/CHANGELOG.md)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3948501.svg)](https://doi.org/10.5281/zenodo.3948501)
 
