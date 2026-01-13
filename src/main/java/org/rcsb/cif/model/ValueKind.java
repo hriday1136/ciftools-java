@@ -36,7 +36,7 @@ public enum ValueKind {
      * @return appropriate ValueKind for "?" and ".", otherwise marked as PRESENT
      */
     public static ValueKind fromCifToken(String s) {
-        if (s == null || s.isEmpty() || CIF_NOT_PRESENT.equals(s)) return NOT_PRESENT;
+        if (s == null || CIF_NOT_PRESENT.equals(s)) return NOT_PRESENT;
         if (CIF_UNKNOWN.equals(s)) return UNKNOWN;
         return PRESENT;
     }
