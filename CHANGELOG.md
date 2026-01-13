@@ -13,6 +13,11 @@ This project uses semantic versioning. Furthermore, this project provides code t
   * `diffrn_radiation_wavelength_id` removed
   * `geom_bond_distance_min` renamed to `geom_min_bond_distance_cutoff`
 
+### General
+* improved builder ergonomics
+  * added overloads that make it easier to build columns with missing values
+  * validate that all columns in a category are equal in size
+
 ciftools-java 7.0.2 - September 2025
 -------------
 ### Bug fixes
