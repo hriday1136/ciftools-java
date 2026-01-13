@@ -9,13 +9,12 @@ import org.rcsb.cif.model.ValueKind;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 import static org.rcsb.cif.model.CategoryBuilder.createColumnText;
 
 public class IntColumnBuilderImpl<P extends CategoryBuilder<PP, PPP>, PP extends BlockBuilder<PPP>, PPP extends CifFileBuilder>
         extends ColumnBuilderImpl<P, PP, PPP> implements IntColumnBuilder<P, PP, PPP> {
-    private final List<Integer> values;
+    private final ArrayList<Integer> values;
 
     public IntColumnBuilderImpl(String categoryName, String columnName, P parent) {
         super(categoryName, columnName, parent);
@@ -29,14 +28,14 @@ public class IntColumnBuilderImpl<P extends CategoryBuilder<PP, PPP>, PP extends
 
     @Override
     public IntColumnBuilder<P, PP, PPP> markNextNotPresent() {
-        values.add(0);
+        values.add(null);
         mask.add(ValueKind.NOT_PRESENT);
         return this;
     }
 
     @Override
     public IntColumnBuilder<P, PP, PPP> markNextUnknown() {
-        values.add(0);
+        values.add(null);
         mask.add(ValueKind.UNKNOWN);
         return this;
     }
@@ -48,8 +47,13 @@ public class IntColumnBuilderImpl<P extends CategoryBuilder<PP, PPP>, PP extends
 
     @Override
     public IntColumnBuilder<P, PP, PPP> add(int... values) {
-        IntStream.of(values).forEach(this.values::add);
-        IntStream.range(0, values.length).mapToObj(i -> ValueKind.PRESENT).forEach(mask::add);
+        this.values.ensureCapacity(this.values.size() + values.length);
+        this.mask.ensureCapacity(this.mask.size() + values.length);
+
+        for (int v : values) {
+            this.values.add(v);
+            this.mask.add(ValueKind.PRESENT);
+        }
         return this;
     }
 

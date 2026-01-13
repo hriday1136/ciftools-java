@@ -9,14 +9,12 @@ import org.rcsb.cif.model.ValueKind;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.DoubleStream;
-import java.util.stream.IntStream;
 
 import static org.rcsb.cif.model.CategoryBuilder.createColumnText;
 
 public class FloatColumnBuilderImpl<P extends CategoryBuilder<PP, PPP>, PP extends BlockBuilder<PPP>, PPP extends CifFileBuilder>
         extends ColumnBuilderImpl<P, PP, PPP> implements FloatColumnBuilder<P, PP, PPP> {
-    private final List<Double> values;
+    private final ArrayList<Double> values;
 
     public FloatColumnBuilderImpl(String categoryName, String columnName, P parent) {
         super(categoryName, columnName, parent);
@@ -30,14 +28,14 @@ public class FloatColumnBuilderImpl<P extends CategoryBuilder<PP, PPP>, PP exten
 
     @Override
     public FloatColumnBuilder<P, PP, PPP> markNextNotPresent() {
-        values.add(0.0);
+        values.add(null);
         mask.add(ValueKind.NOT_PRESENT);
         return this;
     }
 
     @Override
     public FloatColumnBuilder<P, PP, PPP> markNextUnknown() {
-        values.add(0.0);
+        values.add(null);
         mask.add(ValueKind.UNKNOWN);
         return this;
     }
@@ -48,9 +46,14 @@ public class FloatColumnBuilderImpl<P extends CategoryBuilder<PP, PPP>, PP exten
     }
 
     @Override
-    public FloatColumnBuilder<P, PP, PPP> add(double... value) {
-        DoubleStream.of(value).forEach(values::add);
-        IntStream.range(0, value.length).mapToObj(i -> ValueKind.PRESENT).forEach(mask::add);
+    public FloatColumnBuilder<P, PP, PPP> add(double... values) {
+        this.values.ensureCapacity(this.values.size() + values.length);
+        this.mask.ensureCapacity(this.mask.size() + values.length);
+
+        for (double v : values) {
+            this.values.add(v);
+            this.mask.add(ValueKind.PRESENT);
+        }
         return this;
     }
 
