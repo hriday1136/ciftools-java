@@ -1,6 +1,7 @@
 package org.rcsb.cif.model.binary;
 
 import org.rcsb.cif.model.StrColumn;
+import org.rcsb.cif.model.ValueKind;
 
 public class BinaryStrColumn extends BinaryColumn<String[]> implements StrColumn {
     private final String[] data;
@@ -21,7 +22,7 @@ public class BinaryStrColumn extends BinaryColumn<String[]> implements StrColumn
     }
 
     private String honorValueKind(String value) {
-        return (".".equals(value) || "?".equals(value)) ? "" : value;
+        return ValueKind.isValueKindToken(value) ? "" : value;
     }
 
     @Override
