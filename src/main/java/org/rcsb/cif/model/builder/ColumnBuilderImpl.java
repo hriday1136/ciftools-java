@@ -12,7 +12,7 @@ import java.util.List;
 public abstract class ColumnBuilderImpl<P extends CategoryBuilder<PP, PPP>, PP extends BlockBuilder<PPP>, PPP extends CifFileBuilder> implements ColumnBuilder<P, PP, PPP> {
     private final String categoryName;
     private final String columnName;
-    final List<ValueKind> mask;
+    final ArrayList<ValueKind> mask; // concrete impl to expose ensureCapacity()
     final P parent;
 
     ColumnBuilderImpl(String categoryName, String columnName, P parent) {

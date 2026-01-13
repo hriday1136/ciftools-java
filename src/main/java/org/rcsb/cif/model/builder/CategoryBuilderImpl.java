@@ -27,6 +27,7 @@ public class CategoryBuilderImpl<P extends BlockBuilder<PP>, PP extends CifFileB
     protected final P parent;
     private final List<ColumnBuilder<? extends CategoryBuilder<P, PP>, P, PP>> pendingDigests;
     private final List<ColumnBuilder<? extends CategoryBuilder<P, PP>, P, PP>> finishedDigests;
+    private Integer expectedRowCount;
 
     public CategoryBuilderImpl(String categoryName, P parent) {
         this.categoryName = categoryName;
@@ -34,6 +35,7 @@ public class CategoryBuilderImpl<P extends BlockBuilder<PP>, PP extends CifFileB
         this.parent = parent;
         this.pendingDigests = new ArrayList<>();
         this.finishedDigests = new ArrayList<>();
+        this.expectedRowCount = null;
     }
 
     @Override
@@ -46,7 +48,6 @@ public class CategoryBuilderImpl<P extends BlockBuilder<PP>, PP extends CifFileB
         return columns;
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public P leaveCategory() {
         if (parent == null) {
@@ -57,6 +58,17 @@ public class CategoryBuilderImpl<P extends BlockBuilder<PP>, PP extends CifFileB
         pendingDigests.stream()
                 .filter(child -> !finishedDigests.contains(child))
                 .forEach(child -> {
+                    // assert all columns are equal in size
+                    int n = child.getMask().size();
+                    if (expectedRowCount == null) {
+                        expectedRowCount = n;
+                    } else if (expectedRowCount != n) {
+                        throw new IllegalStateException("Category '" + categoryName + "': column '" +
+                                child.getColumnName() + "' has " + n + " rows, but expected " + expectedRowCount +
+                                " based on previously digested columns. Ensure every column receives exactly one value " +
+                                "per row (use markNextUnknown()/markNextNotPresent() for missing values).");
+                    }
+
                     if (child instanceof IntColumnBuilder) {
                         digest((IntColumnBuilder<? extends CategoryBuilder<P, PP>, P, PP>) child);
                     } else if (child instanceof FloatColumnBuilder) {

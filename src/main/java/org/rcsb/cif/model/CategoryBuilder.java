@@ -112,9 +112,9 @@ public interface CategoryBuilder<P extends BlockBuilder<PP>, PP extends CifFileB
             startToken[i] = builder.length();
             String value = String.valueOf(values.get(i));
             if (mask.get(i) == ValueKind.NOT_PRESENT) {
-                value = ".";
+                value = ValueKind.CIF_NOT_PRESENT;
             } else if (mask.get(i) == ValueKind.UNKNOWN) {
-                value = "?";
+                value = ValueKind.CIF_UNKNOWN;
             }
             builder.append(value);
             endToken[i] = builder.length();

@@ -36,19 +36,13 @@ public class TextColumn implements StrColumn {
     }
 
     private String honorValueKind(String value) {
-        return (".".equals(value) || "?".equals(value)) ? "" : value;
+        return ValueKind.isValueKindToken(value) ? "" : value;
     }
 
     @Override
     public ValueKind getValueKind(int row) {
         String value = textData.substring(startToken[row], endToken[row]);
-        if (value.isEmpty() || ".".equals(value)) {
-            return ValueKind.NOT_PRESENT;
-        } else if ("?".equals(value)) {
-            return ValueKind.UNKNOWN;
-        } else {
-            return ValueKind.PRESENT;
-        }
+        return ValueKind.fromCifToken(value);
     }
 
     /**

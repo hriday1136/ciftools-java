@@ -116,11 +116,11 @@ class WriterTest {
                 .leaveBlock()
                 .leaveFile();
         MmCifBlock block = cifFile.getFirstBlock();
-        assertTrue(block.getCategory("atom_site") instanceof org.rcsb.cif.schema.mm.AtomSite);
-        assertTrue(block.getCategory("atom_site").getColumn("B_iso_or_equiv") instanceof FloatColumn);
+        assertInstanceOf(org.rcsb.cif.schema.mm.AtomSite.class, block.getCategory("atom_site"));
+        assertInstanceOf(FloatColumn.class, block.getCategory("atom_site").getColumn("B_iso_or_equiv"));
 
         Category atom_site = new CategoryBuilderImpl<>("atom_site", null).build();
-        assertTrue(atom_site instanceof TextCategory);
+        assertInstanceOf(TextCategory.class, atom_site);
 
         FloatColumn cartnX = new FloatColumnBuilderImpl<>("atom_site", "Cartn_x", null).build();
         assertNotNull(cartnX);
@@ -144,7 +144,7 @@ class WriterTest {
         assertTrue(columnBySchema.isDefined());
         Column<?> columnByName = block.getColumn("atom_site_B_iso_or_equiv");
         assertTrue(columnByName.isDefined());
-        assertTrue(columnByName instanceof FloatColumn);
+        assertInstanceOf(FloatColumn.class, columnByName);
 
         AtomSite categoryBySchema = block.getAtomSite();
         assertTrue(categoryBySchema.isDefined());
@@ -154,7 +154,7 @@ class WriterTest {
         assertFalse(categoryByName.isDefined());
 
         Category atom_site = new CategoryBuilderImpl<>("atom_site", null).build();
-        assertTrue(atom_site instanceof TextCategory);
+        assertInstanceOf(TextCategory.class, atom_site);
 
         FloatColumn cartnX = new FloatColumnBuilderImpl<>("atom_site", "Cartn_x", null).build();
         assertNotNull(cartnX);

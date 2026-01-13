@@ -29,7 +29,7 @@ public interface IntColumn extends Column<int[]> {
      * @return an int
      */
     static int parseInt(String text) {
-        if (text.isEmpty() || ".".equals(text) || "?".equals(text)) {
+        if (text.isEmpty() || ValueKind.isValueKindToken(text)) {
             return 0;
         }
         // some floats may omit decimal places and can be parsed as int: 88. - ignore the dot (in agreement with Mol*)

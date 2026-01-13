@@ -81,7 +81,7 @@ class CifOptionsTest {
         // by switching to RCSB cif files, the implementation type should be text
         CifFile cifFile = CifIO.readById("1acj", CifOptions.builder()
                 .fetchUrl("https://files.rcsb.org/download/%s.cif").build());
-        assertTrue(cifFile instanceof TextFile);
+        assertInstanceOf(TextFile.class, cifFile);
     }
 
     @Test
@@ -89,7 +89,7 @@ class CifOptionsTest {
         // by switching to RCSB bcif files, the implementation type should be binary
         CifFile cifFile = CifIO.readById("1acj", CifOptions.builder()
                 .fetchUrl("https://models.rcsb.org/%s.bcif").build());
-        assertTrue(cifFile instanceof BinaryFile);
+        assertInstanceOf(BinaryFile.class, cifFile);
     }
 
     @Test
