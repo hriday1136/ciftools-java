@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  * Origin of files:
  * - bcif created by Mol* encoder
  * - cif created by Mol* encoder
- *
+ * <p>
  * All tests ensure that the behavior of the reference implementation (i.e. Mol*) is recreated rather than that output
  * is in perfect agreement with e.g. PDB files.
  */

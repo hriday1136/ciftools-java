@@ -46,7 +46,6 @@ public class CategoryBuilderImpl<P extends BlockBuilder<PP>, PP extends CifFileB
         return columns;
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public P leaveCategory() {
         if (parent == null) {

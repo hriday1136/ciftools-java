@@ -98,12 +98,12 @@ class IntegrationTest {
         MmCifFile textCifFile = CifIO.readFromInputStream(TestHelper.getInputStream("cif/1acj.cif")).as(StandardSchemata.MMCIF);
         textCifFile.getFirstBlock()
                 .categories()
-                .forEach(category -> assertTrue(category instanceof DelegatingCategory, "no delegation for text after schema was imposed for " + category.getCategoryName()));
+                .forEach(category -> assertInstanceOf(DelegatingCategory.class, category, "no delegation for text after schema was imposed for " + category.getCategoryName()));
 
         MmCifFile binaryCifFile = CifIO.readFromInputStream(TestHelper.getInputStream("bcif/1acj.bcif")).as(StandardSchemata.MMCIF);
         binaryCifFile.getFirstBlock()
                 .categories()
-                .forEach(category -> assertTrue(category instanceof DelegatingCategory, "no delegation for binary after schema was imposed for " + category.getCategoryName()));
+                .forEach(category -> assertInstanceOf(DelegatingCategory.class, category, "no delegation for binary after schema was imposed for " + category.getCategoryName()));
     }
 
     @Test

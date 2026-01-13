@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.rcsb.cif.TestHelper.convertToIntArray;
 
 /**
- * - Obtain MessagePacked data at: https://msgpack.org/
+ * - Obtain MessagePacked data at: <a href="https://msgpack.org/">msgpack.com</a>
  * - Always use a sorted Map implementation (e.g. LinkedHashMap) as order matters.
  */
 class MessagePackCodecTest {
