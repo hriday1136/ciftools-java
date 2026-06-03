@@ -9,6 +9,8 @@ import org.rcsb.cif.schema.mm.MmCifFile;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
@@ -23,7 +25,7 @@ class Demo {
     }
 
     private static void parseFile() throws IOException {
-        String pdbId = "1acj";
+        String pdbId = "3J3Q";
         boolean parseBinary = true;
 
         // CIF and BinaryCIF are stored in the same data structure
@@ -120,20 +122,36 @@ class Demo {
     }
 
     private static void convertAlphaFold() throws IOException {
-        String id = "AF-Q76EI6-F1-model_v6";
+        long start = System.currentTimeMillis();
 
-        CifFile cifFile = CifIO.readFromURL(new URL("https://alphafold.ebi.ac.uk/files/" + id + ".cif"));
+        String[] s = {"4HHB", "2LGI", "3HQV", "7ART", "3J3Q", "4BTS", "11BJ", "11HB", "10DK", "12GB", "11TG", "9O5G", "9QW5", "6VC1", "3PDM", "2XKM", "9HH6", "3IFX", "1RMN", "1SSZ", "2BVK", "1UR6"};
+
+        for(String id : s) {
+            CifFile cifFile = CifIO.readFromURL(new URL("https://files.rcsb.org/download/" + id + ".cif"));
         MmCifFile mmCifFile = cifFile.as(StandardSchemata.MMCIF);
 
         // print average quality score
-        System.out.println(mmCifFile.getFirstBlock()
+        /*System.out.println(mmCifFile.getFirstBlock()
                 .getMaQaMetricLocal()
                 .getMetricValue()
                 .values()
                 .average()
-                .orElseThrow());
+                .orElseThrow());*/
 
         // convert to BinaryCIF representation
         byte[] output = CifIO.writeBinary(mmCifFile);
+
+    Files.write(Path.of(id + "_javaCopy.bcif"), output);
+    
+    long end = System.currentTimeMillis();
+    long runtime = end - start;
+    System.out.println("Total runtime: " + runtime + " ms");
+
+    System.out.println("BinaryCIF file written to: " + id + "_javaCopy.bcif");
+
+    start = System.currentTimeMillis();
+        }
+
+        
     }
 }
