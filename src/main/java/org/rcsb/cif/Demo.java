@@ -21,6 +21,10 @@ class Demo {
         System.out.println();
         buildModel();
         System.out.println();
+        convertBinaryCIF();
+        System.out.println();
+        convertIHM();
+        System.out.println();
         convertAlphaFold();
     }
 
@@ -121,7 +125,7 @@ class Demo {
                 .forEach(System.out::println);
     }
 
-    private static void convertAlphaFold() throws IOException {
+    private static void convertBinaryCIF() throws IOException {
         long start = System.currentTimeMillis();
 
         String[] s = {"4HHB", "2LGI", "3HQV", "7ART", "3J3Q", "4BTS", "11BJ", "11HB", "10DK", "12GB", "11TG", "9O5G", "9QW5", "6VC1", "3PDM", "2XKM", "9HH6", "3IFX", "1RMN", "1SSZ", "2BVK", "1UR6"};
@@ -148,6 +152,76 @@ class Demo {
     System.out.println("Total runtime: " + runtime + " ms");
 
     System.out.println("BinaryCIF file written to: " + id + "_javaCopy.bcif");
+
+    start = System.currentTimeMillis();
+        }
+
+        
+    }
+
+
+    private static void convertIHM() throws IOException {
+        long start = System.currentTimeMillis();
+
+        String[] s = {"9A8K", "9AAO", "8ZZ1", "8ZZI", "9A01", "9A8M", "9A1G"};
+
+        for(String id : s) {
+            CifFile cifFile = CifIO.readFromURL(new URL("https://files.rcsb.org/download/" + id + ".cif"));
+        MmCifFile mmCifFile = cifFile.as(StandardSchemata.MMCIF);
+
+        // print average quality score
+        /*System.out.println(mmCifFile.getFirstBlock()
+                .getMaQaMetricLocal()
+                .getMetricValue()
+                .values()
+                .average()
+                .orElseThrow());*/
+
+        // convert to BinaryCIF representation
+        byte[] output = CifIO.writeBinary(mmCifFile);
+
+    Files.write(Path.of(id + "_javaCopy.bcif"), output);
+    
+    long end = System.currentTimeMillis();
+    long runtime = end - start;
+    System.out.println("Total runtime: " + runtime + " ms");
+
+    System.out.println("IHM BinaryCIF file written to: " + id + "_javaCopy.bcif");
+
+    start = System.currentTimeMillis();
+        }
+
+        
+    }
+
+
+    private static void convertAlphaFold() throws IOException {
+        long start = System.currentTimeMillis();
+
+        String[] s = {"AF_AFA0A017SEY2F1", "AF_AFA0A017SQ41F1", "MA_MABAKCEPC0001", "MA_MAASFVASFVG001", "MA_MAORNLSPHDIV00001", "MA_MAT3VR3003", "MA_MACOFFESLACC100000G1I1"};
+
+        for(String id : s) {
+            CifFile cifFile = CifIO.readFromURL(new URL("https://alphafold.ebi.ac.uk/files/" + id + "-F1-model_v6.cif"));
+        MmCifFile mmCifFile = cifFile.as(StandardSchemata.MMCIF);
+
+        // print average quality score
+        /*System.out.println(mmCifFile.getFirstBlock()
+                .getMaQaMetricLocal()
+                .getMetricValue()
+                .values()
+                .average()
+                .orElseThrow());*/
+
+        // convert to BinaryCIF representation
+        byte[] output = CifIO.writeBinary(mmCifFile);
+
+    Files.write(Path.of(id + "_javaCopy.bcif"), output);
+    
+    long end = System.currentTimeMillis();
+    long runtime = end - start;
+    System.out.println("Total runtime: " + runtime + " ms");
+
+    System.out.println("AlphaFold BinaryCIF file written to: " + id + "_javaCopy.bcif");
 
     start = System.currentTimeMillis();
         }
