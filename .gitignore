@@ -17,3 +17,5 @@ local.properties
 .loadpath
 .recommenders
 .bcif
+/encodedTestFiles/
+/gzippedTestFiles/

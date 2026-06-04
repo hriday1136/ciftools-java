@@ -7,13 +7,18 @@ import org.rcsb.cif.schema.mm.AtomSite;
 import org.rcsb.cif.schema.mm.MmCifBlock;
 import org.rcsb.cif.schema.mm.MmCifFile;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.*;
 import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
+import java.util.zip.GZIPOutputStream;
 
 class Demo {
     public static void main(String[] args) throws IOException {
@@ -26,6 +31,8 @@ class Demo {
         convertIHM();
         System.out.println();
         convertAlphaFold();
+        System.out.println();
+        gzipFilesFromArray();
     }
 
     private static void parseFile() throws IOException {
@@ -198,10 +205,10 @@ class Demo {
     private static void convertAlphaFold() throws IOException {
         long start = System.currentTimeMillis();
 
-        String[] s = {"AF_AFA0A017SEY2F1", "AF_AFA0A017SQ41F1", "MA_MABAKCEPC0001", "MA_MAASFVASFVG001", "MA_MAORNLSPHDIV00001", "MA_MAT3VR3003", "MA_MACOFFESLACC100000G1I1"};
+        String[] s = {"AF-A0A017SEY2-F1-model_v6", "AF-A0A017SQ41-F1-model_v6", "ma-bak-cepc-0001", "ma-asfv-asfvg-001", "ma-ornl-sphdiv-00001", "ma-t3vr3-003", "ma-coffe-slac-c100000_g1_i1"};
 
         for(String id : s) {
-            CifFile cifFile = CifIO.readFromURL(new URL("https://alphafold.ebi.ac.uk/files/" + id + "-F1-model_v6.cif"));
+            CifFile cifFile = CifIO.readFromPath(Path.of(id + ".cif"));
         MmCifFile mmCifFile = cifFile.as(StandardSchemata.MMCIF);
 
         // print average quality score
@@ -228,4 +235,94 @@ class Demo {
 
         
     }
+
+
+    public static void gzipFilesFromArray() {
+    String[] files = {
+            "8ZZ1_javaCopy.bcif",
+            "8ZZI_javaCopy.bcif",
+            "9A01_javaCopy.bcif",
+            "9A1G_javaCopy.bcif",
+            "9A8K_javaCopy.bcif",
+            "9A8M_javaCopy.bcif",
+            "9AAO_javaCopy.bcif",
+            "AF-A0A017SEY2-F1-model_v6_javaCopy.bcif",
+            "AF-A0A017SQ41-F1-model_v6_javaCopy.bcif",
+            "ma-asfv-asfvg-001_javaCopy.bcif",
+            "ma-bak-cepc-0001_javaCopy.bcif",
+            "ma-coffe-slac-c100000_g1_i1_javaCopy.bcif",
+            "ma-ornl-sphdiv-00001_javaCopy.bcif",
+            "ma-t3vr3-003_javaCopy.bcif"
+    };
+
+    System.out.printf(
+            "%-40s %-40s %-22s %-22s%n",
+            "Original File",
+            "Gzipped File",
+            "Runtime (ms, 7 s.f.)",
+            "Gzipped Size (bytes)"
+    );
+
+    System.out.println("-".repeat(130));
+
+    for (String filePath : files) {
+        try {
+            gzipSingleFile(filePath);
+        } catch (IOException e) {
+            System.out.printf(
+                    "%-40s %-40s %-22s %-22s%n",
+                    filePath,
+                    "ERROR",
+                    "ERROR",
+                    e.getMessage()
+            );
+        }
+    }
+}
+
+private static void gzipSingleFile(String inputFilePath) throws IOException {
+    Path inputPath = Paths.get(inputFilePath);
+
+    if (!Files.exists(inputPath)) {
+        throw new FileNotFoundException("File not found");
+    }
+
+    if (!Files.isRegularFile(inputPath)) {
+        throw new IOException("Not a regular file");
+    }
+
+    String outputFilePath = inputFilePath + ".gz";
+    Path outputPath = Paths.get(outputFilePath);
+
+    long startTime = System.nanoTime();
+
+    try (
+            FileInputStream fis = new FileInputStream(inputFilePath);
+            BufferedInputStream bis = new BufferedInputStream(fis);
+            FileOutputStream fos = new FileOutputStream(outputFilePath);
+            BufferedOutputStream bos = new BufferedOutputStream(fos);
+            GZIPOutputStream gzipOut = new GZIPOutputStream(bos)
+    ) {
+        byte[] buffer = new byte[8192];
+        int bytesRead;
+
+        while ((bytesRead = bis.read(buffer)) != -1) {
+            gzipOut.write(buffer, 0, bytesRead);
+        }
+    }
+
+    long endTime = System.nanoTime();
+
+    double runtimeMs = (endTime - startTime) / 1_000_000.0;
+    long gzippedSizeBytes = Files.size(outputPath);
+
+    System.out.printf(
+            "%-40s %-40s %-22.7g %-22d%n",
+            inputPath.getFileName().toString(),
+            outputPath.getFileName().toString(),
+            runtimeMs,
+            gzippedSizeBytes
+    );
+}
+
 }
