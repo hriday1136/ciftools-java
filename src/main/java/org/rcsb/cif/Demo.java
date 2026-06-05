@@ -170,7 +170,7 @@ class Demo {
     private static void convertIHM() throws IOException {
         long start = System.currentTimeMillis();
 
-        String[] s = {"9A8K", "9AAO", "8ZZ1", "8ZZI", "9A01", "9A8M", "9A1G"};
+        String[] s = {"9A8K", "9AAO", "8ZZ1", "8ZZI", "9A01", "9A8M", "9A1G", "9A25"};
 
         for(String id : s) {
             CifFile cifFile = CifIO.readFromURL(new URL("https://files.rcsb.org/download/" + id + ".cif"));
